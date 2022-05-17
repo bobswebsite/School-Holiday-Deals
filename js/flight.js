@@ -38,12 +38,12 @@ async function functionLoad(){
     document.getElementById("C32").style.display='none';
     (dat.Name!="t")? await airface('none'):await airface('blok');
  const cityFrom=await get1city({city:dat.From});
- console.log(cityFrom);
+ if(dat.City_From==null){dat.City_From='unknow'}
  const cityTo=await get1city({city:dat.To});
  var v=document.getElementById("E12");
      v.innerHTML=`<div class="d-flex justify-content-between">
     <div>
-        <h3 class="card-title">${(cityFrom.length==1)?cityFrom[0].city:(dat.City_From!='unknow')?dat.City_From:dat.From} to ${cityTo[0].city}</h3>
+        <h3 class="card-title">${(cityFrom==1)?cityFrom[0].city:(dat.City_From!='unknow')?dat.City_From:dat.From} to ${cityTo[0].city}</h3>
         <p class="card-meta">One way Flight</p>
     </div>
 </div>
