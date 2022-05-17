@@ -122,7 +122,7 @@ async function openSky(i)
         localStorage.setItem("Skay",JSON.stringify(response));
         localStorage.removeItem("ToS");
         localStorage.setItem("ToS",arrylist8[i].To);
-        window.open('flight-grid.html');
+        window.open('flight-grid');
     }).catch(e=>{});
     document.getElementById("preloader").style.display='none';
 }
@@ -137,7 +137,7 @@ async function openFlight(i)
         response[0]["Dates"]=response[0]["Dates"].slice(0,10);
         localStorage.removeItem("data");
         localStorage.setItem("data",JSON.stringify(response[0]));
-        window.open('flight-booking.html');
+        window.open('flight-booking');
     }).catch(e=>{});
 
     document.getElementById("preloader").style.display='none';
@@ -263,14 +263,14 @@ if(city2){
      
      localStorage.removeItem("Status");
      localStorage.setItem("Status",1);
-     window.location="flight-sidebar.html";
+     window.location="flight-sidebar";
 
    }
 
    function Funheader(){
     localStorage.removeItem("Status");
     localStorage.setItem("Status",0);
-    window.location="flight-sidebar.html";
+    window.location="flight-sidebar";
    }
 
 function formatDate(date)

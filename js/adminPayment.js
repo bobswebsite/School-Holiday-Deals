@@ -20,7 +20,7 @@ document.getElementsByClassName("font-size-14")[0].innerHTML=`Showing ${_i+1} to
         var rows=`<tr>
         <th scope="row">${i+1}</th>
         <th scope="row"><a class="color-text">${arryPay[i].USERid}</a></th>
-        <td><a href="admin-dashboard-traveler-detail.html" class="color-text">${arryPay[i].full_name}</a></td>
+        <td><a href="admin-dashboard-traveler-detail" class="color-text">${arryPay[i].full_name}</a></td>
         <td>$${arryPay[i].Price}</td>
         <td>PayPal</td>
         <td>${arryPay[i].Date_payment.slice(0,10)}</td>

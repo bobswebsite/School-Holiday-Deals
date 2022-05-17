@@ -42,7 +42,7 @@ document.getElementsByClassName("font-size-14")[0].innerHTML=`Showing ${_i+1} to
 
 function openuser(i){
 sessionStorage.setItem("id",arryPay[i].id);
-window.open('user-profile.html');
+window.open('user-profile');
 }
 
 let cursor=1;

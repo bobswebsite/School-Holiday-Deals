@@ -82,10 +82,10 @@ async function functionLoad(){
 $(document).ready(async function(){
     $("#heart").click(async function(){
       if($("#heart").hasClass("liked")){
-        $("#heart").html('<i class="la la-heart-o" aria-hidden="true" style="color: #f9b851;cursor: pointer;font-size:30px;"></i>');
+        $("#heart")('<i class="la la-heart-o" aria-hidden="true" style="color: #f9b851;cursor: pointer;font-size:30px;"></i>');
         $("#heart").removeClass("liked");
       }else{
-        $("#heart").html('<i class="la la-heart" aria-hidden="true" style="color: #f9b851;cursor: pointer;font-size:30px;"></i>');
+        $("#heart")('<i class="la la-heart" aria-hidden="true" style="color: #f9b851;cursor: pointer;font-size:30px;"></i>');
         $("#heart").addClass("liked");
         const price=(dat.New_price!=null)?dat.New_price:(dat.Total_Price!=null)?dat.Total_Price:dat.Total;
         const dates=(dat.Dates!=null)?dat.Dates:dat.Arrive;

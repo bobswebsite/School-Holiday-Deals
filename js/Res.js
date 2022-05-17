@@ -111,7 +111,7 @@ async function homeSearch(){
                             </div><!-- end info-icon-->
                         </div>
                         <div class="section-block"></div>
-                        <a href="pricing.html" class="d-flex align-items-center justify-content-between view-all">View Details <i class="la la-arrow-right"></i></a>
+                        <a href="pricing" class="d-flex align-items-center justify-content-between view-all">View Details <i class="la la-arrow-right"></i></a>
                     </div>
                 </div>`:await diplayData(arrySearch1,0);
         
@@ -151,7 +151,7 @@ async function clickChek(ctchb,nbr){
     resulte=[];
     resulte=NewArray;
     await diplayData(resulte,0);
-    if(resulte.length===0){window.location="flight-sidebar.html";}
+    if(resulte.length===0){window.location="flight-sidebar";}
   }
 }
 
@@ -180,7 +180,7 @@ async function clickChekD(ctchb,nbr){
     resulteDay=[];
     resulteDay=NewArray;
     await diplayData(resulteDay,0);
-    if(resulteDay.length===0){window.location="flight-sidebar.html";}
+    if(resulteDay.length===0){window.location="flight-sidebar";}
   }
 }
 
@@ -209,7 +209,7 @@ async function clickChekC(ctchb,nbr){
     resulteCabin=[];
     resulteCabin=NewArray;
     await diplayData(resulteCabin,0);
-    if(resulteCabin.length===0){window.location="flight-sidebar.html";}
+    if(resulteCabin.length===0){window.location="flight-sidebar";}
   }
 }
 
@@ -239,7 +239,7 @@ async function clickChekS(ctchb,nbr){
     resulteStop=[];
     resulteStop=NewArray;
     await diplayData(resulteStop,0);
-    if(resulteStop.length===0){window.location="flight-sidebar.html";}
+    if(resulteStop.length===0){window.location="flight-sidebar";}
   }
 }
 
@@ -358,13 +358,13 @@ async function Funsearch(){
  
  localStorage.removeItem("Status");
  localStorage.setItem("Status",1);
- window.location="flight-sidebar.html";
+ window.location="flight-sidebar";
 }
 
 function Funheader(){
 localStorage.removeItem("Status");
 localStorage.setItem("Status",0);
-window.location="flight-sidebar.html";
+window.location="flight-sidebar";
 }
 
 function formatDate(date)
@@ -494,7 +494,7 @@ function savedata(i){
 
     localStorage.removeItem("data");
     localStorage.setItem("data",JSON.stringify(data[i]));
-    window.open('flight-booking.html');
+    window.open('flight-booking');
  
 };
 

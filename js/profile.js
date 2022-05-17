@@ -37,7 +37,7 @@ async function FunctionProfile()
     else if(localStorage.getItem("admin")=="true"){dash[1].style.display='inline-block';}
    else
    {
-        window.location='index.html';
+        window.location='index';
     }
     
     (sessionStorage.getItem("id")!=null)?profil=await openProfile({USERid:sessionStorage.getItem("id")}):(localStorage.getItem("idUser")!=null)?profil=await openProfile({USERid:localStorage.getItem("idUser")}):null;
@@ -120,7 +120,7 @@ function savedata(i){
     localStorage.removeItem("data");
     localStorage.setItem("data",JSON.stringify(Wishlist[i]));
     document.getElementById("preloader").style.display='none';
-    window.open('flight-booking.html');
+    window.open('flight-booking');
  
 };
 
