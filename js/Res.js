@@ -24,6 +24,8 @@ var l=document.getElementById("res1");
 
 async function homeSearch(){
     
+    document.getElementById("Sign_Out").style.display='none';
+    if(localStorage.getItem("idUser")!=null){document.getElementById("Sign_Out").style.display='inline-block';}
     var dash=document.getElementsByClassName("dashboard1");
     dash[0].style.display='none';
     dash[1].style.display='none';
@@ -33,10 +35,7 @@ async function homeSearch(){
     if(localStorage.getItem("Status")==1){
         (localStorage.getItem("idUser")!=null)?document.getElementById("login1").style.display='none':document.getElementById("login1").style.display='inline-block';
         (localStorage.getItem("idUser")!=null)?document.getElementById("login2").style.display='none':document.getElementById("login2").style.display='inline-block';
-            document.getElementById("Sign_Out").style.display='none';
-    if(localStorage.getItem("idUser")!=null){document.getElementById("Sign_Out").style.display='inline-block';}
-       
-    
+
     const data={IDuser:70,From:localStorage.getItem("From"),To:localStorage.getItem("To"),cabin:localStorage.getItem("cabin"),Airline:localStorage.getItem("Airline"),fromDate:localStorage.getItem("FromDate"),toDate:localStorage.getItem("ToDate")}
         arrySearch1=await Search1(data);
         document.getElementById("found").innerHTML=`<h3 class="title font-size-24" >${arrySearch1.length} Flights found</h3>`;
