@@ -99,7 +99,8 @@ async function homeSearch(){
                         document.getElementById("addStop").innerHTML+=r;
                        
                     }
-                    (arrySearch1[0].Status===false)?l.innerHTML=`<div class="col-lg-3 responsive-column-l">
+
+                    (arrySearch1[0].Status==false)?l.innerHTML=`<div class="col-lg-3 responsive-column-l">
                     <div class="icon-box icon-layout-2 dashboard-icon-box dashboard--icon-box bg-3 pb-0">
                         <div class="d-flex pb-3 justify-content-between">
                             <div class="info-content">
