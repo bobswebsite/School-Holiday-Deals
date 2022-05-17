@@ -36,7 +36,7 @@ async function homeSearch(){
         (localStorage.getItem("idUser")!=null)?document.getElementById("login1").style.display='none':document.getElementById("login1").style.display='inline-block';
         (localStorage.getItem("idUser")!=null)?document.getElementById("login2").style.display='none':document.getElementById("login2").style.display='inline-block';
 
-    const data={IDuser:70,From:localStorage.getItem("From"),To:localStorage.getItem("To"),cabin:localStorage.getItem("cabin"),Airline:localStorage.getItem("Airline"),fromDate:localStorage.getItem("FromDate"),toDate:localStorage.getItem("ToDate")}
+    const data={IDuser:(localStorage.getItem("idUser")!=null)?localStorage.getItem("idUser"):0,From:localStorage.getItem("From"),To:localStorage.getItem("To"),cabin:localStorage.getItem("cabin"),Airline:localStorage.getItem("Airline"),fromDate:localStorage.getItem("FromDate"),toDate:localStorage.getItem("ToDate")}
         arrySearch1=await Search1(data);
         document.getElementById("found").innerHTML=`<h3 class="title font-size-24" >${arrySearch1.length} Flights found</h3>`;
         if(arrySearch1.length>0) document.getElementById("circleLoad").style.display = "none";
