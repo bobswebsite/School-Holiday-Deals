@@ -103,7 +103,7 @@ async function desplayWishlist()
             <div class="card-price d-flex align-items-center justify-content-between">
                 <p>
                     <span class="price__from">Price from</span>
-                    <span class="price__num">$${(Wishlist[i].New_price!=null)?Wishlist[i].New_price:(Wishlist[i].Total_Price!=null)?Wishlist[i].Total_Price:Wishlist[i].Total}.00</span>
+                    <span class="price__num">£${(Wishlist[i].New_price!=null)?Wishlist[i].New_price:(Wishlist[i].Total_Price!=null)?Wishlist[i].Total_Price:Wishlist[i].Total}.00</span>
                 </p>
                 <a href="#" class="theme-btn theme-btn-small" onclick='savedata(${i})'>Read details</a>
             </div>

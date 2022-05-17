@@ -394,7 +394,7 @@ function funMax(){
 
     var p=document.getElementById("price1");
     p.innerHTML="";
-    p.innerHTML="$"+nbr1+"-$"+nbr2;
+    p.innerHTML="£"+nbr1+"-£"+nbr2;
 }
 var apply=document.getElementById("calcul");
 if(apply){
@@ -451,7 +451,7 @@ async function diplayData(dataA,stat)
                       <div>
                           <div class="text-right">
                           <p class="card-meta font-size-14">One way flight</p>
-                          <div><span  Style=" color: red">${(data[i].Olde_price!=null)?'$'+data[i].Olde_price+'.00':''+data[i].Name+''}</span></div><div><h5 Style=" color: #287dfa">$${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</h5></div>
+                          <div><span  Style=" color: red">${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''+data[i].Name+''}</span></div><div><h5 Style=" color: #287dfa">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</h5></div>
                           </div>
                       </div>
                   </div><!-- end card-top-title -->

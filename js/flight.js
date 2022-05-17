@@ -63,17 +63,17 @@ async function functionLoad(){
 <ul class="list-items list-items-2 py-3">
     ${(dat.Airline!=null)?`<li><span>Airline:</span>${(dat.Airline!=null)?dat.Airline:""}</li>`:''}
     ${(dat.Cabin!=null)?`<li><span>Flight Type:</span>${(dat.Cabin!=null)?dat.Cabin:""}</li>`:''}
-    <li Style=" color: #287dfa"><span>Total Price:</span>$${(dat.New_price!=null)? dat.New_price : (dat.Total_Price!=null)?dat.Total_Price:dat.Total}</li>
+    <li Style=" color: #287dfa"><span>Total Price:</span>£${(dat.New_price!=null)? dat.New_price : (dat.Total_Price!=null)?dat.Total_Price:dat.Total}</li>
     ${(dat.Stops!=null)?`<li><span>Stops:</span>${(dat.Stops!=null)?dat.Stops:""}</li>`:''}
     <li><span>${(dat.Days!=null)?'Days:':(dat.Nights!=null)?'Nights':''}</span>${(dat.Days!=null)?dat.Days:(dat.Nights!=null)?dat.Nights:''}</li>
     ${(dat.baggage_Amount!=null)?`<li><span>baggage Amount:</span>${(dat.baggage_Amount!=null)?dat.baggage_Amount:""}</li>`:''}
 </ul>
 <div class="section-block"></div>
 <ul class="list-items list-items-2 pt-3">
-    <li><span>Price flight:</span>$${(dat.New_price!=null)? dat.New_price : (dat.Total_Price!=null)?dat.Total_Price:dat.Price_flight}</li>
-    <li><span>Price Hotel:</span>$${(dat.Price_hote!=null)? dat.Price_hote : 0}</li>
-    <li><span>Total Tax:</span>$${(dat.Total_Tax!=null)? dat.Total_Tax : 0}</li>
-    <li  Style=" color: #287dfa"><span>Total Price:</span>$${(dat.Total!=null)? dat.Total : (dat.New_price!=null)? dat.New_price : (dat.Total_Price!=null)?dat.Total_Price:dat.Price_flight}</li>
+    <li><span>Price flight:</span>£${(dat.New_price!=null)? dat.New_price : (dat.Total_Price!=null)?dat.Total_Price:dat.Price_flight}</li>
+    <li><span>Price Hotel:</span>£${(dat.Price_hote!=null)? dat.Price_hote : 0}</li>
+    <li><span>Total Tax:</span>£${(dat.Total_Tax!=null)? dat.Total_Tax : 0}</li>
+    <li  Style=" color: #287dfa"><span>Total Price:</span>£${(dat.Total!=null)? dat.Total : (dat.New_price!=null)? dat.New_price : (dat.Total_Price!=null)?dat.Total_Price:dat.Price_flight}</li>
 </ul>`;
 
 

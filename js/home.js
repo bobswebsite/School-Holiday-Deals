@@ -68,7 +68,7 @@ else if(arrylist[i].To=="IAD")arrylist[i].To="Washington";
             <div class="card-price d-flex align-items-center justify-content-between">
                 <p>
                     <span class="price__from">From</span>
-                    <span class="price__num">$${arrylist[i].Price}</span>
+                    <span class="price__num">£${arrylist[i].Price}</span>
                 </p>
                 <a href="#" class="btn-text" onclick='openFlight(${i})'>Read details<i class="la la-angle-right"></i></a>
             </div>
@@ -99,7 +99,7 @@ else if(arrylist8[i].To=="ATQ")arrylist8[i].To="India";
     <div class="deal-list">
         <div class="d-flex align-items-center justify-content-between mb-3">
             <h5 class="title"><a href="#">${arrylist8[i].To}</a></h5>
-            <span class="font-weight-bold font-size-18">$${arrylist8[i].Price}.00</span>
+            <span class="font-weight-bold font-size-18">£${arrylist8[i].Price}.00</span>
         </div>
         <a href="#" class="theme-btn theme-btn-small" onclick='openSky(${i})'>More</a>
     </div>
