@@ -86,7 +86,7 @@ async function desplayDat(){
                             <p class="font-size-14 text-center"><span class="color-text-2 mr-1">Date: </span>${dat[i].Dates}</p>
                         </div><!-- end flight-details -->
                         <div class="btn-box text-center">
-                            <a href="flight-single" class="theme-btn theme-btn-small w-100" onclick='savedata(${i})'>View Details</a>
+                            <a href="#" class="theme-btn theme-btn-small w-100" onclick='savedata(${i})'>View Details</a>
                         </div>
                     </div><!-- end card-body -->
                 </div><!-- end card-item -->
