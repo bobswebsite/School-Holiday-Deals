@@ -429,8 +429,9 @@ async function diplayData(dataA,stat)
     if(tpage<20){nbrPage=tpage;document.getElementById("btnLoad").style.display="none";}
 
     for(var i=_i;i<nbrPage;i++){
-       
-
+       console.log(data[i].Airline)
+        var Nome=(data[i].Name=="comprGOOGL")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLAirline")?"GOOGLE FLIGHT AIRLINE":(data[i].Name=="comprGOOGLBusiness")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLPremium")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLCOPY")?"GOOGLE FLIGHT DOMESTIC":(data[i].Name=="comprsky")?"Skyscanner":(data[i].Name=="quicksky")?"Skyscanner":(data[i].Name=="easyjet")?"EASYJET":(data[i].Name=="JET2HOLIDAYS")?"JET2HOLIDAYS":(data[i].Name=="t")?"AIRFACE":"HOLIDAY"
+    
         if(localStorage.getItem("To")==data[i].citys) {data[i].citys="";}
         if(data[i].Dates != null){data[i].Dates=data[i].Dates.slice(0,10);}else{data[i].Dates=data[i].Datest};
           (data[i].Arrive!=null)?(data[i].Arrive=data[i].Arrive.slice(0,10)):null;
@@ -439,19 +440,22 @@ async function diplayData(dataA,stat)
           var rows=`<div class="col-lg-6 responsive-column">
           <div class="card-item flight-card flight--card">
               <div class="card-img" style="padding: 4px 4px;">
-                  <img src="${data[i].photos}" alt="flight-img" width="460" height="210">
+                  <img src="${(data[i].Image!=null)?data[i].Image:data[i].photos}" alt="flight-img" style="max-width: 100%;max-height: 100%;">
+                  <span class="badge">${Nome}</span>
               </div>
+              <span class="badge" style="float:right;color:white;background-color: coral;">${(data[i].Days!=null)?data[i].Days:(data[i].Nights!=null)?data[i].Nights:''}</span>
+              <span class="badge" style="float:left;color:white;background-color: coral;">${(data[i].Cabin!=null)?data[i].Cabin:(data[i].Guest!=null)?data[i].Guest+' Guests':''}</span>
               <div class="card-body">
                   <div class="card-top-title d-flex justify-content-between">
                       <div>
                           <h3 class="card-title font-size-17">${localStorage.getItem("To")}</h3>
-                          <h6  Style=" color: red; margin-top:10px">${(data[i].Olde_price!=null)?'Old Price':'Name'}</h6>
+                          <h6  Style=" color: red; margin-top:10px">${(data[i].Olde_price!=null)?'Old Price':''}</h6>
                           <h6  Style=" color: #287dfa; margin-top:10px">${(data[i].New_price!=null)?'New Price':'Total Price'}</h6>
                       </div>
                       <div>
                           <div class="text-right">
-                          <p class="card-meta font-size-14">One way flight</p>
-                          <div><span  Style=" color: red">${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''+data[i].Name+''}</span></div><div><h5 Style=" color: #287dfa">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</h5></div>
+                          <p class="card-meta font-size-14">${(Nome=='EASYJET' || Nome=='JET2HOLIDAYS')?'Round trip flights':'one ways flights'}</p>
+                          <div><span  Style=" color: red">${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''}</span></div><div><h5 Style=" color: #287dfa">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</h5></div>
                           </div>
                       </div>
                   </div><!-- end card-top-title -->
@@ -465,18 +469,22 @@ async function diplayData(dataA,stat)
                                   <h3 class="card-title font-size-15 font-weight-medium mb-0">From</h3>
                                   <p class="card-meta font-size-14">${localStorage.getItem("From")}: ${data[i].From}</p>
                               </div>
-                          </div>
-                          <div class="flight-time-item landing d-flex">
-                              <div class="flex-shrink-0 mr-2">
+                             
+                              <div class="flex-shrink-0 mr-2" style="float: right;">
                                   <i class="la la-plane"></i>
                               </div>
-                              <div>
+                              <div style="float: right;">
                                   <h3 class="card-title font-size-15 font-weight-medium mb-0">To</h3>
                                   <p class="card-meta font-size-14">${localStorage.getItem("To")}: ${(data[i].citys==localStorage.getItem("To"))?'':(data[i].citys!=null)?data[i].citys:(data[i].To_Airpot==localStorage.getItem("To"))?'':data[i].To_Airpot} ${data[i].To}</p>
                               </div>
                           </div>
+                          <div class="flight-time-item take-off">
+                          <span class="color-text-2 mr-1">Airline: </span>
+                          <img src="/views/images/${(data[i].Airline!=null)?data[i].Airline:'unknow'}.png" alt="flight-img">
+                          
+                          </div>
                       </div><!-- end flight-time -->
-                      <p class="font-size-14 text-center"><span class="color-text-2 mr-1">${(data[i].Dates!=null)?'Date:':(data[i].Datest!=null)?'Date:':''} </span>${(data[i].Dates!=null)?data[i].Dates:(data[i].Datest!=null)?data[i].Datest:('Depart: '+data[i].Arrive+' Arrive: '+data[i].Depart)}</p>
+                      <p class="font-size-14 text-center"><span class="color-text-2 mr-1">${(data[i].Dates!=null)?'Depart Date:':(data[i].Datest!=null)?'Date:':''} </span>${(data[i].Dates!=null)?data[i].Dates:(data[i].Datest!=null)?data[i].Datest:('Depart: '+data[i].Arrive+' Arrive: '+data[i].Depart)}</p>
                   </div><!-- end flight-details -->
                   <div class="btn-box text-center">
                   <input type="button" class="theme-btn theme-btn-small w-100 btn2" onclick='savedata(${i})' value="View Details">
