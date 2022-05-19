@@ -55,9 +55,9 @@ else if(arrylist[i].To=="IAD")arrylist[i].To="Washington";
 
     var row=` <div class="col-lg-4 responsive-column">
     <div class="card-item flight-card">
-        <div class="card-img">
+        <div class="card-img" >
             <a href="#" onclick='openFlight(${i})' class="d-block">
-                <img src="${arrylist[i].photos}" alt="destination-img">
+                <img src="${arrylist[i].photos}" alt="destination-img" height=248>
                 <span class="badge">${arrylist[i].To}</span>
             </a>
         </div>
