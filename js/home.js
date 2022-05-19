@@ -16,16 +16,26 @@ document.onkeydown = function(e) {
     }
   }
 document.getElementById("Load").onload =home;
-const detectDeviceType = () =>
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-    ? 'Mobile'
-    : 'Desktop';
+const getDeviceType = () => {
+    const ua = navigator.userAgent;
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+      return "tablet";
+    }
+    if (
+      /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+        ua
+      )
+    ) {
+      return "mobile";
+    }
+    return "desktop";
+  };
 
 var arrylist=[],arrylist8=[];
 
 async function home(){
 
-    (detectDeviceType!='Mobile')?await NUMVisitors({Status:false}):await NUMVisitors({Status:true});
+    (getDeviceType!='mobile')?await NUMVisitors({Status:false}):await NUMVisitors({Status:true});
     
     (localStorage.getItem("idUser")!=null)?document.getElementById("login1").style.display='none':document.getElementById("login1").style.display='inline-block';
     (localStorage.getItem("idUser")!=null)?document.getElementById("login2").style.display='none':document.getElementById("login2").style.display='inline-block';
