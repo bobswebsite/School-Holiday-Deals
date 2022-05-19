@@ -478,11 +478,9 @@ async function diplayData(dataA,stat)
                                   <p class="card-meta font-size-14">${localStorage.getItem("To")}: ${(data[i].citys==localStorage.getItem("To"))?'':(data[i].citys!=null)?data[i].citys:(data[i].To_Airpot==localStorage.getItem("To"))?'':data[i].To_Airpot} ${data[i].To}</p>
                               </div>
                           </div>
-                          <div class="flight-time-item take-off">
-                          <span class="color-text-2 mr-1">Airline: </span>
-                          <img src="/views/images/${(data[i].Airline!=null)?data[i].Airline:'unknow'}.png" alt="flight-img">
-                          
-                          </div>
+                          ${(data[i].Airline!=null)?'<div class="flight-time-item take-off">'+
+                        '<span class="color-text-2 mr-1">Airline: </span>'+
+                          '<img src="/views/images/'+data[i].Airline+'.png" alt="flight-img"> </div>':''}
                       </div><!-- end flight-time -->
                       <p class="font-size-14 text-center"><span class="color-text-2 mr-1">${(data[i].Dates!=null)?'Depart Date:':(data[i].Datest!=null)?'Date:':''} </span>${(data[i].Dates!=null)?data[i].Dates:(data[i].Datest!=null)?data[i].Datest:('Depart: '+data[i].Arrive+' Arrive: '+data[i].Depart)}</p>
                   </div><!-- end flight-details -->
