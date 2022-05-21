@@ -218,7 +218,19 @@
             <div class="col-lg-4">
                 <div class="sidebar mb-0">
                     <div class="sidebar-widget">
-                        <h3 class="title stroke-shape">Search Flights</h3>
+                        <ul class="nav nav-tabs" id="myTab3" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link show active" id="round-trip-tab" data-toggle="tab" href="#round-trip" role="tab" aria-controls="round-trip" aria-selected="true">
+                                    Flight
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link show" id="holiday" data-toggle="tab" href="#round-trip" role="tab">
+                                    Holiday
+                                </a>
+                            </li>
+                         
+                        </ul>
                         <div class="sidebar-widget-item">
                             <div class="contact-form-action">
                                 <form action="#">
@@ -243,11 +255,10 @@
                                         </div>
                                     </div>
                                     <div class="input-box"> 
-                                        <input type="checkbox" value="Active" id="check1">
-                                        <label class="label-text">Date</label>
+                                        <label class="label-text">Depart Dates</label>
                                         <div class="form-group">
                                             <span class="la la-calendar form-icon"></span>
-                                            <input class="date-range form-control" type="text" id="fromDate" name="daterange" readonly disabled>
+                                            <input class="date-range form-control" type="text" id="fromDate" name="daterange" readonly>
                                         </div>
                                     </div>
                                    
@@ -480,11 +491,11 @@
                                         </div>
                                     </div>
                                     <div class="input-box">
-                                        <label class="label-text">Preferred class</label>
+                                        <label class="label-text">Cabin</label>
                                         <div class="form-group">
                                             <div class="select-contain w-auto">
                                                 <select class="select-contain-select" id="cabin">
-                                                            <option value="All" selected>All</option>
+                                                            <option value="All" selected>Default</option>
                                                             <option value="Economy">Economy</option>
                                                             <option value="Business">Business</option>
                                                             <option value="Premium">Premium</option>
@@ -492,6 +503,35 @@
                                             </div><!-- end select-contain -->
                                         </div>
                                     </div>
+                                   
+                                        <div class="input-box" id="selectDays">
+                                            <label class="label-text">Staying How long?</label>
+                                            <div class="form-group">
+                                                <div class="select-contain select-contain-shadow w-auto">
+                                                    <select class="select-contain-select" id="Days">
+                                                        <option value="2 Day">2 Days</option>
+                                                        <option value="3 Day">3 Days</option>
+                                                        <option value="4 Day">4 Days</option>
+                                                        <option value="7 Day" selected>7 Days</option>
+                                                        <option value="8 Day">8 Days</option>
+                                                        <option value="14 Day">14 Days</option>
+                                                        <option value="15 Day">15 Days</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                            <div class="input-box" id="selectNights">
+                                                <label class="label-text">Staying How long?</label>
+                                                <div class="form-group">
+                                                    <div class="select-contain select-contain-shadow w-auto">
+                                                        <select class="select-contain-select" id="Night">
+                                                            <option value="7 Nights" selected>7 Nights</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                       
                                     <div class="btn-box pt-2">
                                         <a href="#" class="theme-btn" id="search1">Search Now</a>
                                     </div>

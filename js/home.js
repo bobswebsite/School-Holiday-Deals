@@ -30,8 +30,7 @@ document.getElementById("Load").onload =home;
 var arrylist=[],arrylist8=[];
 
 async function home(){
-  
-    (divase!='mobile')?await NUMVisitors({Status:false}):await NUMVisitors({Status:true});
+    document.getElementById("selectNights").style.display='none';
     
     (localStorage.getItem("idUser")!=null)?document.getElementById("login1").style.display='none':document.getElementById("login1").style.display='inline-block';
     (localStorage.getItem("idUser")!=null)?document.getElementById("login2").style.display='none':document.getElementById("login2").style.display='inline-block';
@@ -43,7 +42,8 @@ async function home(){
     dash[1].style.display='none';
     if(localStorage.getItem("admin")=="false"){dash[0].style.display='inline-block';}
     else if(localStorage.getItem("admin")=="true"){dash[1].style.display='inline-block';}
-    
+    (divase!='mobile')?await NUMVisitors({Status:false}):await NUMVisitors({Status:true});
+     
     
 
 arrylist=await Get6AirPort();
@@ -229,16 +229,21 @@ if(city2){
     if(hdr2){
         hdr2.addEventListener("click",Funheader);
     }
-  
+var test=false;
+    var fe=document.getElementById("fromDate");
+  if(fe){fe.addEventListener("click",bbb)}
+
+  function bbb(){test=true;console.log(test);}
    async function Funsearch(){
       
-       var From,To,cabin,Airline,FromDate,ToDate,dte;
+       var From,To,cabin,Airline,Days,FromDate,ToDate,dte;
        From=document.getElementById("sFrom").value;
        To=document.getElementById("sTo").value;
        cabin=document.getElementById("cabin").value;
+       (typeHD)?Days=document.getElementById("Nught").value:Days=document.getElementById("Days").value;
        var e=document.getElementById("Airline");
        Airline=e.options[e.selectedIndex].text;
-       if(document.getElementById("check1").checked==true){
+       if(test=true){
         dte=document.getElementById("fromDate").value;
         FromDate=dte.slice(0,10);
         FromDate=formatDate(FromDate)
@@ -259,6 +264,8 @@ if(city2){
      
      localStorage.removeItem("cabin");
      localStorage.setItem("cabin",cabin);
+     localStorage.removeItem("Days");
+     localStorage.setItem("Days",Days);
      localStorage.removeItem("Airline");
      localStorage.setItem("Airline",Airline);
 
@@ -382,20 +389,29 @@ function myFunctionS() {
   }
 
 
+var typeHD=false;
+
+  var vrday=document.getElementById("round-trip-tab");
+  if(vrday){
+      vrday.addEventListener("click",functiondays)
+  }
+
+var vrholiday=document.getElementById("holiday");
+if(vrholiday){
+    vrholiday.addEventListener("click",functionHolidy)
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+function functionHolidy(){
+    document.getElementById("selectDays").style.display='none';
+    document.getElementById("selectNights").style.display='inline-block';
+    typeHD=true;
+}
+function functiondays(){
+    document.getElementById("selectDays").style.display='inline-block';
+    document.getElementById("selectNights").style.display='none';
+    typeHD=false;
+}
 
 
 var URL='https://s-hd.herokuapp.com/';
@@ -425,7 +441,6 @@ async function Get6AirPort() {
         });
         return output;
 }
-
 async function Get8AirPort() {
     var output
         await $.get(""+URL+"Get8Items", await function (data) {

@@ -154,7 +154,12 @@
                             <ul class="nav nav-tabs" id="myTab3" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link show active" id="round-trip-tab" data-toggle="tab" href="#round-trip" role="tab" aria-controls="round-trip" aria-selected="true">
-                                        The Search Grid
+                                        Flight
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="holiday" data-toggle="tab" href="#round-trip" role="tab">
+                                        Holiday
                                     </a>
                                 </li>
                              
@@ -193,22 +198,21 @@
                                         </div><!-- end col-lg-3 -->
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box"> 
-                                                <input type="checkbox" value="Active" id="check1">
                                                 <label class="label-text">Depart Dates</label>
                                                 <div class="form-group">
                                                     <span class="la la-calendar form-icon"></span>
-                                                    <input class="date-range form-control" type="text" id="fromDate" name="daterange" readonly disabled>
+                                                    <input class="date-range form-control" type="text" id="fromDate" name="daterange" readonly>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
                                       
                                         <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text">Coach</label>
+                                            <div class="input-box" >
+                                                <label class="label-text">Cabin</label>
                                                 <div class="form-group">
                                                     <div class="select-contain select-contain-shadow w-auto">
                                                         <select class="select-contain-select" id="cabin">
-                                                            <option value="All" selected>All</option>
+                                                            <option value="All" selected>Default</option>
                                                             <option value="Economy">Economy</option>
                                                             <option value="Business">Business</option>
                                                             <option value="Premium">Premium</option>
@@ -217,6 +221,36 @@
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
+                                        <div class="col-lg-3 pr-0" id="selectDays">
+                                            <div class="input-box">
+                                                <label class="label-text">Staying How long</label>
+                                                <div class="form-group">
+                                                    <div class="select-contain select-contain-shadow w-auto">
+                                                        <select class="select-contain-select" id="Days">
+                                                            <option value="2 day">2 day</option>
+                                                            <option value="3 day">3 day</option>
+                                                            <option value="4 day">4 day</option>
+                                                            <option value="7 day" selected>7 day</option>
+                                                            <option value="8 day">8 day</option>
+                                                            <option value="14 day">14 day</option>
+                                                            <option value="15 day">15 day</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 pr-0" id="selectNights">
+                                            <div class="input-box">
+                                                <label class="label-text">Staying How long</label>
+                                                <div class="form-group">
+                                                    <div class="select-contain select-contain-shadow w-auto">
+                                                        <select class="select-contain-select" id="Night">
+                                                            <option value="7 Nights" selected>7 Nights</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="col-lg-3">
                                             <a href="#" class="theme-btn w-100 text-center margin-top-20px" id="search1">Search Now</a>
                                         </div>
@@ -462,62 +496,7 @@
                                     </div>
                                 </div><!-- end advanced-wrap -->
                             </div><!-- end tab-pane -->
-                            <div class="tab-pane fade multi-flight-wrap" id="multi-city" role="tabpanel" aria-labelledby="multi-city-tab">
-                                <div class="contact-form-action multi-flight-field d-flex align-items-center">
-                                    <form action="#" class="row flex-grow-1 align-items-center">
-                                        <div class="col-lg-4 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text">Flying from</label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-marker form-icon"></span>
-                                                    <input class="form-control" type="text" placeholder="City or airport">
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        <div class="col-lg-4 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text">Flying to</label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-marker form-icon"></span>
-                                                    <input class="form-control" type="text" placeholder="City or airport">
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        <div class="col-lg-4">
-                                            <div class="input-box">
-                                                <label class="label-text">Choose Outbound Dates</label>
-                                                <div class="form-group">
-                                                    <span class="la la-calendar form-icon"></span>
-                                                    <input class="date-range form-control date-multi-picker" type="text" name="daterange-single">
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                    </form>
-                                    <div class="multi-flight-delete-wrap pt-3 pl-3">
-                                        <button class="multi-flight-remove" type="button"><i class="la la-remove"></i></button>
-                                    </div>
-                                </div>
-                                <div class="row align-items-center">
-                               
-                                    <div class="col-lg-3 pr-0">
-                                        <div class="input-box">
-                                            <label class="label-text">Coach</label>
-                                            <div class="form-group">
-                                                <div class="select-contain select-contain-shadow w-auto">
-                                                    <select class="select-contain-select">
-                                                        <option value="1" selected>Economy</option>
-                                                        <option value="2">Business</option>
-                                                        <option value="3">First class</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end col-lg-3 -->
-                                    <div class="col-lg-3">
-                                        <a href="#" class="theme-btn w-100 text-center margin-top-20px" id="search1">Search Now</a>
-                                    </div>
-                                </div>
-                            </div><!-- end tab-pane -->
+                         
                         </div>
                     </div><!-- end main-search-input -->
                 </div>

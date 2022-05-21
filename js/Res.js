@@ -23,7 +23,7 @@ var tpage;
 var l=document.getElementById("res1");
 
 async function homeSearch(){
-    
+    document.getElementById("selectNights").style.display='none';
     document.getElementById("Sign_Out").style.display='none';
     if(localStorage.getItem("idUser")!=null){document.getElementById("Sign_Out").style.display='inline-block';}
     var dash=document.getElementsByClassName("dashboard1");
@@ -31,12 +31,12 @@ async function homeSearch(){
     dash[1].style.display='none';
     if(localStorage.getItem("admin")=="false"){dash[0].style.display='inline-block';}
     else if(localStorage.getItem("admin")=="true"){dash[1].style.display='inline-block';}
+    (localStorage.getItem("idUser")!=null)?document.getElementById("login1").style.display='none':document.getElementById("login1").style.display='inline-block';
+    (localStorage.getItem("idUser")!=null)?document.getElementById("login2").style.display='none':document.getElementById("login2").style.display='inline-block';
 
     if(localStorage.getItem("Status")==1){
-        (localStorage.getItem("idUser")!=null)?document.getElementById("login1").style.display='none':document.getElementById("login1").style.display='inline-block';
-        (localStorage.getItem("idUser")!=null)?document.getElementById("login2").style.display='none':document.getElementById("login2").style.display='inline-block';
-
-    const data={IDuser:(localStorage.getItem("idUser")!=null)?localStorage.getItem("idUser"):0,From:localStorage.getItem("From"),To:localStorage.getItem("To"),cabin:localStorage.getItem("cabin"),Airline:localStorage.getItem("Airline"),fromDate:localStorage.getItem("FromDate"),toDate:localStorage.getItem("ToDate")}
+        
+    const data={IDuser:(localStorage.getItem("idUser")!=null)?localStorage.getItem("idUser"):0,From:localStorage.getItem("From"),To:localStorage.getItem("To"),cabin:localStorage.getItem("cabin"),Airline:localStorage.getItem("Airline"),Days:localStorage.getItem("Days"),fromDate:localStorage.getItem("FromDate"),toDate:localStorage.getItem("ToDate")}
         arrySearch1=await Search1(data);
         document.getElementById("found").innerHTML=`<h3 class="title font-size-24" >${arrySearch1.length} Flights found</h3>`;
         if(arrySearch1.length>0) document.getElementById("circleLoad").style.display = "none";
@@ -311,24 +311,27 @@ if(sear1){
     sear1.addEventListener("click",Funsearch);
 }
 
-var chk=document.getElementById("check1");
-if(chk)chk.addEventListener("change",()=>{document.getElementById("fromDate").disabled=!document.getElementById("fromDate").disabled;});
 
 
 var hdr2=document.getElementById("header2");
 if(hdr2){
     hdr2.addEventListener("click",Funheader);
 }
+var test=false;
+    var fe=document.getElementById("fromDate");
+  if(fe){fe.addEventListener("click",bbb)}
 
+  function bbb(){test=true;console.log(test);}
 async function Funsearch(){
   
-   var From,To,cabin,Airline,FromDate,ToDate,dte;
+   var From,To,cabin,Airline,Days,FromDate,ToDate,dte;
    From=document.getElementById("sFrom").value;
    To=document.getElementById("sTo").value;
    cabin=document.getElementById("cabin").value;
+   (typeHD)?Days=document.getElementById("Night").value:Days=document.getElementById("Days").value;
    var e=document.getElementById("Airline");
    Airline=e.options[e.selectedIndex].text;
-   if(document.getElementById("check1").checked==true){
+   if(test==true){
     dte=document.getElementById("fromDate").value;
     FromDate=dte.slice(0,10);
     FromDate=formatDate(FromDate)
@@ -349,6 +352,8 @@ async function Funsearch(){
  
  localStorage.removeItem("cabin");
  localStorage.setItem("cabin",cabin);
+ localStorage.removeItem("Days");
+ localStorage.setItem("Days",Days);
  localStorage.removeItem("Airline");
  localStorage.setItem("Airline",Airline);
 
@@ -454,8 +459,8 @@ async function diplayData(dataA,stat)
                       </div>
                       <div>
                           <div class="text-right">
-                          <p class="card-meta font-size-14">${(Nome=='EASYJET' || Nome=='JET2HOLIDAYS')?'Round trip flights':'one ways flights'}</p>
-                          <div><span  Style=" color: red">${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''}</span></div><div><h5 Style=" color: #287dfa">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</h5></div>
+                          <p class="card-meta font-size-14">${(Nome=='EASYJET' || Nome=='JET2HOLIDAYS')?'Round trip flights':'One way'}</p>
+                          <div><span  Style=" color: red; font-size:18px">${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''}</span></div><div><i class="icono-arrow2-up" style="color:${(data[i].New_price>data[i].Olde_price)?'red':(data[i].New_price<data[i].Olde_price)?'green':'grey'}"></i><span Style=" color: #287dfa; font-size:18px">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</span></div>
                           </div>
                       </div>
                   </div><!-- end card-top-title -->
@@ -480,7 +485,13 @@ async function diplayData(dataA,stat)
                           </div>
                           ${(data[i].Airline!=null)?'<div class="flight-time-item take-off">'+
                         '<span class="color-text-2 mr-1">Airline: </span>'+
-                          '<img src="/views/images/'+data[i].Airline+'.png" alt="flight-img"> </div>':''}
+                          '<img src="/views/images/'+data[i].Airline+'.png" alt="flight-img"> </div>'
+                          :(Nome=='EASYJET')?'<div class="flight-time-item take-off">'+
+                          '<span class="color-text-2 mr-1">Airline: </span>'+
+                            '<img src="/views/images/EASYJET.png" alt="flight-img"> </div>':
+                            (Nome=='JET2HOLIDAYS')?'<div class="flight-time-item take-off">'+
+                            '<span class="color-text-2 mr-1">Airline: </span>'+
+                              '<img src="/views/images/JET2HOLIDAYS.png" alt="flight-img"> </div>':''}
                       </div><!-- end flight-time -->
                       <p class="font-size-14 text-center"><span class="color-text-2 mr-1">${(data[i].Dates!=null)?'Depart Date:':(data[i].Datest!=null)?'Date:':''} </span>${(data[i].Dates!=null)?data[i].Dates:(data[i].Datest!=null)?data[i].Datest:('Depart: '+data[i].Arrive+' Arrive: '+data[i].Depart)}</p>
                   </div><!-- end flight-details -->
@@ -670,6 +681,43 @@ function myFunctionS() {
     var x = document.getElementsByClassName("Error");
     x[0].innerHTML=``;
   }
+
+
+
+  var typeHD=false;
+
+  var vrday=document.getElementById("round-trip-tab");
+  if(vrday){
+      vrday.addEventListener("click",functiondays)
+  }
+
+var vrholiday=document.getElementById("holiday");
+if(vrholiday){
+    vrholiday.addEventListener("click",functionHolidy)
+}
+
+
+function functionHolidy(){
+    document.getElementById("selectDays").style.display='none';
+    document.getElementById("selectNights").style.display='inline-block';
+    typeHD=true;
+}
+function functiondays(){
+    document.getElementById("selectDays").style.display='inline-block';
+    document.getElementById("selectNights").style.display='none';
+    typeHD=false;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
