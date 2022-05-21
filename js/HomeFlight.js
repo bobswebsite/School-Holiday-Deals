@@ -56,7 +56,7 @@ if(cnf){
     cnf.addEventListener("click",function_Add);
 } 
 async function addAirport(i){
-    const data={from:document.getElementById("From"+i+""),to:document.getElementById("To"+i+""),fromD:arry[i].From,toD:arry[i].To}
+    const data={from:document.getElementById("From"+i+"").value,to:document.getElementById("To"+i+"").value,fromD:arry[i].From,toD:arry[i].To}
 await AddbestFlight(data).then(res=>{
     if(res.ok){
         alert("Added successfully!!");
