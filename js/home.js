@@ -305,9 +305,12 @@ if(signup){
 async function FuSignup(){
     signup.disabled=true;
     var vr=document.getElementsByClassName("form-control S");
+
+    
     var utc = new Date().toJSON().slice(0,10).replace(/-/g,'-');
-const dataD={full_name:vr[0].value,email:vr[1].value,phone_number:vr[2].value,password:vr[3].value,dateCreate:''+utc+''}
-(vr[3].value===vr[3].value)?await Signup(dataD).then(response=>{
+const dataD={full_name:vr[0].value,phone_number:vr[2].value,email:vr[1].value,password:vr[3].value,dateCreate:''+utc+''};
+
+(vr[3].value==vr[4].value)?await Signup(dataD).then(response=>{
 (response[0]["Status"]==true)?after(response[0]):FuClear(vr,true);
 }):alert("password does not match");
 }
