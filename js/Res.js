@@ -486,7 +486,7 @@ async function diplayData(dataA,stat)
                           </div>
                           ${(data[i].Airline!=null)?'<div class="flight-time-item take-off">'+
                         '<span class="color-text-2 mr-1">Airline: </span>'+
-                          '<img src="/views/images/'+data[i].Airline+'.png" alt="flight-img"> </div>'
+                          '<img src="'+data[i].photo+'" alt="flight-img"> </div>'
                           :(Nome=='EASYJET')?'<div class="flight-time-item take-off">'+
                           '<span class="color-text-2 mr-1">Airline: </span>'+
                             '<img src="/views/images/EASYJET.png" alt="flight-img"> </div>':
