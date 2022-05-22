@@ -136,7 +136,7 @@ async function clickChek(ctchb,nbr){
    
    
     
-    console.log(arryAirline[nbr])
+
    
         var listId=(arrySearch1.filter(data => data.Airline == arryAirline[nbr]));
     
@@ -219,7 +219,7 @@ async function clickChekS(ctchb,nbr){
     var checkBox = document.getElementById(ctchb);
     nbrPage=20;
    _i=0;
-   console.log(checkBox.checked)
+
  if (checkBox.checked == true){
     
    
@@ -322,7 +322,7 @@ var test=false;
     var fe=document.getElementById("fromDate");
   if(fe){fe.addEventListener("click",bbb)}
 
-  function bbb(){test=true;console.log(test);}
+  function bbb(){test=true;}
 async function Funsearch(){
   
    var From,To,cabin,Airline,Days,FromDate,ToDate,dte;
@@ -435,7 +435,7 @@ async function diplayData(dataA,stat)
     if(tpage<20){nbrPage=tpage;document.getElementById("btnLoad").style.display="none";}
 
     for(var i=_i;i<nbrPage;i++){
-       console.log(data[i].Airline)
+      
         var Nome=(data[i].Name=="comprGOOGL")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLAirline")?"GOOGLE FLIGHT AIRLINE":(data[i].Name=="comprGOOGLBusiness")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLPremium")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLCOPY")?"GOOGLE FLIGHT DOMESTIC":(data[i].Name=="comprsky")?"Skyscanner":(data[i].Name=="quicksky")?"Skyscanner":(data[i].Name=="easyjet")?"EASYJET":(data[i].Name=="JET2HOLIDAYS")?"JET2HOLIDAYS":(data[i].Name=="t")?"AIRFACE":"HOLIDAY"
     
         if(localStorage.getItem("To")==data[i].citys) {data[i].citys="";}
