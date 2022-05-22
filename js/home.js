@@ -30,7 +30,7 @@ document.getElementById("Load").onload =home;
 var arrylist=[],arrylist8=[];
 
 async function home(){
-    document.getElementById("selectNights").style.display='none';
+
     
     (localStorage.getItem("idUser")!=null)?document.getElementById("login1").style.display='none':document.getElementById("login1").style.display='inline-block';
     (localStorage.getItem("idUser")!=null)?document.getElementById("login2").style.display='none':document.getElementById("login2").style.display='inline-block';
@@ -203,7 +203,7 @@ if(city2){
 
 
 
- function getdata(ident,txt)
+async function getdata(ident,txt)
 {
     if(ident==0 && txt!="")
     {
@@ -215,6 +215,7 @@ if(city2){
     document.getElementById("sTo").value=txt;
     document.getElementById("myUL_T").innerHTML=``;
     }
+    (typeHD!=true)?await desplayDay():await desplayNight();
 }
 
 
@@ -240,7 +241,7 @@ var test=false;
        From=document.getElementById("sFrom").value;
        To=document.getElementById("sTo").value;
        cabin=document.getElementById("cabin").value;
-       (typeHD)?Days=document.getElementById("Nught").value:Days=document.getElementById("Days").value;
+       Days=document.getElementById("Days").value;
        var e=document.getElementById("Airline");
        Airline=e.options[e.selectedIndex].text;
        if(test=true){
@@ -406,15 +407,39 @@ if(vrholiday){
 
 
 function functionHolidy(){
-    document.getElementById("selectDays").style.display='none';
-    document.getElementById("selectNights").style.display='inline-block';
     typeHD=true;
 }
 function functiondays(){
-    document.getElementById("selectDays").style.display='inline-block';
-    document.getElementById("selectNights").style.display='none';
+
     typeHD=false;
 }
+
+
+
+
+var arryD=[],arryN=[];
+var vrDay=document.getElementById("Days");
+async function desplayDay(){
+    vrDay.innerHTML=``;
+    arryD= await GetDay({From:document.getElementById("sFrom").value,To:document.getElementById("sTo").value});
+    console.log(arryD.length);
+    for(var i=0;i<arryD.length;i++){
+        var rows=`<option value="${arryD[i].Days}">${arryD[i].Days}</option>`;
+        vrDay.innerHTML+=rows;
+    }
+}
+
+async function desplayNight(){
+    vrDay.innerHTML=``;
+    arryN= await GetNight({From:document.getElementById("sFrom").value,To:document.getElementById("sTo").value});
+    for(var i=0;i<arryN.length;i++){
+        var rows=`<option value="${arryN[i].Nights}">${arryN[i].Nights}</option>`;
+        vrDay.innerHTML+=rows;
+    }
+}
+
+
+
 
 
 var URL='https://s-hd.herokuapp.com/';
@@ -443,6 +468,22 @@ async function Get6AirPort() {
             output = data
         });
         return output;
+}
+async function GetNight(data) {
+        const response=await fetch(`${URL}GetNights`,{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(data)
+        });
+        return response.json();
+}
+async function GetDay(data) {
+        const response=await fetch(`${URL}GetDays`,{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(data)
+        });
+        return response.json();
 }
 async function Get8AirPort() {
     var output
