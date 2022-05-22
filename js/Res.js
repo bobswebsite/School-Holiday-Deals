@@ -437,7 +437,7 @@ async function diplayData(dataA,stat)
     for(var i=_i;i<nbrPage;i++){
       
         var Nome=(data[i].Name=="comprGOOGL")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLAirline")?"GOOGLE FLIGHT AIRLINE":(data[i].Name=="comprGOOGLBusiness")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLPremium")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLCOPY")?"GOOGLE FLIGHT DOMESTIC":(data[i].Name=="comprsky")?"Skyscanner":(data[i].Name=="quicksky")?"Skyscanner":(data[i].Name=="easyjet")?"EASYJET":(data[i].Name=="JET2HOLIDAYS")?"JET2HOLIDAYS":(data[i].Name=="t")?"AIRFACE":"HOLIDAY"
-    
+        var photoAirlin=(data[i].photo!=null)?data[i].photo:'';
         if(localStorage.getItem("To")==data[i].citys) {data[i].citys="";}
         if(data[i].Dates != null){data[i].Dates=data[i].Dates.slice(0,10);}else{data[i].Dates=data[i].Datest};
           (data[i].Arrive!=null)?(data[i].Arrive=data[i].Arrive.slice(0,10)):null;
@@ -486,7 +486,7 @@ async function diplayData(dataA,stat)
                           </div>
                           ${(data[i].Airline!=null)?'<div class="flight-time-item take-off">'+
                         '<span class="color-text-2 mr-1">Airline: </span>'+
-                          '<img src="'+data[i].photo+'" alt="flight-img"> </div>'
+                          '<img src="'+photoAirlin+'" alt="flight-img"> </div>'
                           :(Nome=='EASYJET')?'<div class="flight-time-item take-off">'+
                           '<span class="color-text-2 mr-1">Airline: </span>'+
                             '<img src="/views/images/EASYJET.png" alt="flight-img"> </div>':
