@@ -437,18 +437,18 @@ async function diplayData(dataA,stat)
     for(var i=_i;i<nbrPage;i++){
       
         var Nome=(data[i].Name=="comprGOOGL")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLAirline")?"GOOGLE FLIGHT AIRLINE":(data[i].Name=="comprGOOGLBusiness")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLPremium")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLCOPY")?"GOOGLE FLIGHT DOMESTIC":(data[i].Name=="comprsky")?"Skyscanner":(data[i].Name=="quicksky")?"Skyscanner":(data[i].Name=="easyjet")?"EASYJET":(data[i].Name=="JET2HOLIDAYS")?"JET2HOLIDAYS":(data[i].Name=="t")?"AIRFACE":"HOLIDAY"
-        var photoAirlin=(data[i].photo!=null)?data[i].photo:'';
+        var photoAirlin=(data[i].logo!=null)?data[i].logo:'';
         if(localStorage.getItem("To")==data[i].citys) {data[i].citys="";}
         if(data[i].Dates != null){data[i].Dates=data[i].Dates.slice(0,10);}else{data[i].Dates=data[i].Datest};
           (data[i].Arrive!=null)?(data[i].Arrive=data[i].Arrive.slice(0,10)):null;
           (data[i].Depart!=null)?(data[i].Depart=data[i].Depart.slice(0,10)):null;
 
           var rows=`<div class="col-lg-6 responsive-column">
-          <div class="card-item flight-card flight--card">
-              <div class="card-img" style="padding: 4px 4px;">
-                  <img src="${(data[i].Image!=null)?data[i].Image:data[i].photos}" alt="flight-img" style="max-width: 100%;max-height: 100%;">
-                  <span class="badge">${Nome}</span>
-              </div>
+          <div class="card-item flight-card flight--card">${(data[i].Image==null)?'<span class="badge" style="display: block;font-size: 14px; margin-bottom: 10px; background-color:#40cc6f;color:#fff;">'+Nome+'</span>':''}
+          ${(data[i].Image!=null)?'<div class="card-img" style="padding: 4px 4px;">'+
+                  '<img src="'+(data[i].Image!=null)?data[i].Image:null+'" alt="flight-img" style="max-width: 100%;max-height: 100%;"><span class="badge">'+Nome+'</span></div>':''}
+                  
+              
               <span class="badge" style="float:right;color:white;background-color: coral;">${(data[i].Days!=null)?data[i].Days:(data[i].Nights!=null)?data[i].Nights:''}</span>
               <span class="badge" style="float:left;color:white;background-color: coral;">${(data[i].Cabin!=null)?data[i].Cabin:(data[i].Guest!=null)?data[i].Guest+' Guests':''}</span>
               <div class="card-body">
@@ -460,7 +460,7 @@ async function diplayData(dataA,stat)
                       </div>
                       <div>
                           <div class="text-right">
-                          <p class="card-meta font-size-14">${(Nome=='EASYJET' || Nome=='JET2HOLIDAYS')?'Round trip flights':'One way'}</p>
+                          <p class="card-meta font-size-14">${(Nome=='EASYJET' || Nome=='JET2HOLIDAYS')?'Round trip flights':'Round trip'}</p>
                           <div><span  Style=" color: red; font-size:18px">${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''}</span></div><div><i class="icono-arrow2-up" style="color:${(data[i].New_price>data[i].Olde_price)?'red':(data[i].New_price<data[i].Olde_price)?'green':'grey'}"></i><span Style=" color: #287dfa; font-size:18px">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</span></div>
                           </div>
                       </div>
