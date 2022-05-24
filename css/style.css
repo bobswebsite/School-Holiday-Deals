@@ -82,6 +82,12 @@
   [class*="icono-arrow2"][class*="-up"] {
     transform: rotate(-45deg);
   }
+  [class*="icono-arrow2"][class*="-down"] {
+    transform: none;
+  }
+  [class*="icono-arrow2"][class*="-down"] {
+    transform: rotate(-45deg);
+  }
   [class*="icono"] {
     position: relative;
     display: inline-block;

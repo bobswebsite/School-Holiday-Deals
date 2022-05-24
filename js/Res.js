@@ -461,7 +461,7 @@ async function diplayData(dataA,stat)
                       <div>
                           <div class="text-right">
                           <p class="card-meta font-size-14">${(Nome=='EASYJET' || Nome=='JET2HOLIDAYS')?'Round trip flights':'Round trip'}</p>
-                          <div><span  Style=" color: red; font-size:18px">${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''}</span></div><div><i class="icono-arrow2-up" style="color:${(data[i].New_price>data[i].Olde_price)?'red':(data[i].New_price<data[i].Olde_price)?'green':'grey'}"></i><span Style=" color: #287dfa; font-size:18px">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</span></div>
+                          <div><span  Style=" color: red; font-size:18px">${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''}</span></div><div><i class="icono-arrow2-down" style="color:${(data[i].New_price>data[i].Olde_price)?'red':(data[i].New_price<data[i].Olde_price)?'green':'grey'}"></i><span Style=" color: #287dfa; font-size:18px">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</span></div>
                           </div>
                       </div>
                   </div><!-- end card-top-title -->
