@@ -86,7 +86,7 @@
     transform: none;
   }
   [class*="icono-arrow2"][class*="-down"] {
-    transform: rotate(-45deg);
+    transform: rotate(-225deg);
   }
   [class*="icono"] {
     position: relative;
