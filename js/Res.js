@@ -465,8 +465,8 @@ async function diplayData(dataA,stat)
                           </div>
                       </div>
                   </div><!-- end card-top-title -->
-                  <div class="flight-details py-3">
-                      <div class="flight-time pb-3">
+                  <div class="flight-details">
+                      <div class="flight-time">
                           <div class="flight-time-item take-off d-flex">
                               <div class="flex-shrink-0 mr-2">
                                   <i class="la la-plane"></i>ou 
