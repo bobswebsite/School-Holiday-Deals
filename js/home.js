@@ -70,7 +70,7 @@ else if(arrylist[i].To=="IAD")arrylist[i].To="Washington";
         <div class="card-body">
             <h4 style="color:#40cc6f;">${arrylist[i].Airline} </h4>
             <h3 class="card-title"><a href="#" onclick='openFlight(${i})'>${arrylist[i].From} to ${arrylist[i].To}</a></h3>
-            <p class="card-meta">One way Flight</p>
+            <p class="card-meta">Round trip flight</p>
             <div class="card-price d-flex align-items-center justify-content-between">
                 <p>
                     <span class="price__from">From</span>
