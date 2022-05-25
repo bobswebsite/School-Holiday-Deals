@@ -92,7 +92,7 @@ async function SendUpdt(){
     var picture=document.getElementById("imag");
     var air=document.getElementById("Airline");
     var airde=document.getElementById("Aircod");
-    if(air.value==Airline.value && picture.value!='')
+    if(air.value!='' && picture.value!='' && airde.value!='')
     {
        await UpdtAirImg({Airline:air.value,Aircode:airde.value,photo:picture.value}).then(response=>{
            if(response.ok){
