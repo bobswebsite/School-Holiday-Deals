@@ -44,7 +44,7 @@ async function functionLoad(){
      v.innerHTML=`<div class="d-flex justify-content-between">
     <div>
         <h3 class="card-title">${(cityFrom==1)?cityFrom[0].city:(dat.City_From!='unknow')?dat.City_From:dat.From} to ${cityTo[0].city}</h3>
-        <p class="card-meta">One way Flight</p>
+        <p class="card-meta">Round trip flight</p>
     </div>
 </div>
 <div class="card-rating">

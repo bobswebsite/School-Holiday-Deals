@@ -57,7 +57,7 @@ async function desplayDat(){
                             </div>
                             <div>
                                 <div class="text-right">
-                                    <span class="font-weight-regular font-size-14 d-block">One way flight</span>
+                                    <span class="font-weight-regular font-size-14 d-block">Round trip flight</span>
                                     <div><span  Style=" color: red">${(dat[i].Olde_price!=null)?'£'+dat[i].Olde_price+'.00':''}</span></div><div><h5 Style=" color: #287dfa">£${(dat[i].New_price!=null)?dat[i].New_price:''}.00</h5></div>
                                 </div>
                             </div>
