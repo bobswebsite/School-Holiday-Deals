@@ -112,7 +112,7 @@ async function homeSearch(){
                             </div><!-- end info-icon-->
                         </div>
                         <div class="section-block"></div>
-                        <a href="pricing" class="d-flex align-items-center justify-content-between view-all">View Details <i class="la la-arrow-right"></i></a>
+                        <a href="pricing" class="d-flex align-items-center justify-content-between view-all">View Details 2<i class="la la-arrow-right"></i></a>
                     </div>
                 </div>`:await diplayData(arrySearch1,0);
         
@@ -497,7 +497,7 @@ async function diplayData(dataA,stat)
                       <p class="font-size-14 text-center"><span class="color-text-2 mr-1">${(data[i].Dates!=null)?'Depart Date:':(data[i].Datest!=null)?'Date:':''} </span>${(data[i].Dates!=null)?data[i].Dates:(data[i].Datest!=null)?data[i].Datest:('Depart: '+data[i].Arrive+' Arrive: '+data[i].Depart)}</p>
                   </div><!-- end flight-details -->
                   <div class="btn-box text-center">
-                  <input type="button" class="theme-btn theme-btn-small w-100 btn2" onclick='savedata(${i})' value="View Details">
+                  <input type="button" class="theme-btn theme-btn-small w-100 btn2" onclick='savedata(${i})' value="View Details 2">
                   </div>
               </div><!-- end card-body -->
           </div><!-- end card-item -->
