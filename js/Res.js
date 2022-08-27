@@ -469,7 +469,7 @@ async function diplayData(dataA,stat)
                       <div class="flight-time">
                           <div class="flight-time-item take-off d-flex">
                               <div class="flex-shrink-0 mr-2">
-                                  <i class="la la-plane"></i>ou 
+                                  <i class="la la-plane"></i>
                               </div>
                               <div>
                                   <h3 class="card-title font-size-15 font-weight-medium mb-0">From</h3>
