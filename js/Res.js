@@ -489,10 +489,10 @@ async function diplayData(dataA,stat)
                           '<img src="'+photoAirlin+'" alt="flight-img"> </div>'
                           :(Nome=='EASYJET')?'<div class="flight-time-item take-off">'+
                           '<span class="color-text-2 mr-1">Airline: </span>'+
-                            '<img src="/views/images/EASYJET.png" alt="flight-img"> </div>':
+                            '<img src="/images/EASYJET.png" alt="flight-img"> </div>':
                             (Nome=='JET2HOLIDAYS')?'<div class="flight-time-item take-off">'+
                             '<span class="color-text-2 mr-1">Airline: </span>'+
-                              '<img src="/views/images/JET2HOLIDAYS.png" alt="flight-img"> </div>':''}
+                              '<img src="/images/JET2HOLIDAYS.png" alt="flight-img"> </div>':''}
                       </div><!-- end flight-time -->
                       <p class="font-size-14 text-center"><span class="color-text-2 mr-1">${(data[i].Dates!=null)?'Depart Date:':(data[i].Datest!=null)?'Date:':''} </span>${(data[i].Dates!=null)?data[i].Dates:(data[i].Datest!=null)?data[i].Datest:('Depart: '+data[i].Arrive+' Arrive: '+data[i].Depart)}</p>
                   </div><!-- end flight-details -->
