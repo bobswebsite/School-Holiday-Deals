@@ -124,7 +124,17 @@ async function homeSearch(){
     }
 }
 
-
+function getCustomDateFormat(data) {
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        ];
+        const t = new Date(String(data));
+        const date = ('0' + t.getDate()).slice(-2);
+        const month = monthNames[t.getMonth()];
+        const year = t.getFullYear();
+        const time = `${date}/${month}/${year}`;
+        return time;
+    }
 
 async function clickChek(ctchb,nbr){
     l.innerHTML=``;
@@ -441,7 +451,7 @@ async function diplayData(dataA,stat)
         if(localStorage.getItem("To")==data[i].citys) {data[i].citys="";}
         if(data[i].Dates != null){data[i].Dates=data[i].Dates.slice(0,10);}else{data[i].Dates=data[i].Datest};
           (data[i].Arrive!=null)?(data[i].Arrive=data[i].Arrive.slice(0,10)):null;
-          (data[i].Depart!=null)?(data[i].Depart=data[i].Depart.slice(0,10)):null;
+          (data[i].Depart!=null)?(data[i].Depart=getCustomDateFormat(data[i].Depart.slice(0,10))):null;
 
           var rows=`<div class="col-lg-6 responsive-column">
           <div class="card-item flight-card flight--card">${(data[i].Image==null)?'<span class="badge" style="display: block;font-size: 14px; margin-bottom: 10px; background-color:#40cc6f;color:#fff;">'+Nome+'</span>':''}
