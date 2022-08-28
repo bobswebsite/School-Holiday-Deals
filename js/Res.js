@@ -446,7 +446,7 @@ async function diplayData(dataA,stat)
           var rows=`<div class="col-lg-6 responsive-column">
           <div class="card-item flight-card flight--card">${(data[i].Image==null)?'<span class="badge" style="display: block;font-size: 14px; margin-bottom: 10px; background-color:#40cc6f;color:#fff;">'+Nome+'</span>':''}
           ${(data[i].Image!=null)?'<div class="card-img" style="padding: 4px 4px;">'+
-                  '<img src="'https://photos.hotelbeds.com/giata/bigger/00/003765/003765a_hb_a_006.jpg'" alt="flight-img" style="max-width: 100%;max-height: 100%;"><span class="badge">'+Nome+'</span></div>':''}
+                  '<img src="" alt="flight-img" style="max-width: 100%;max-height: 100%;"><span class="badge">'+Nome+'</span></div>':''}
                   
               
               <span class="badge" style="float:right;color:white;background-color: coral;">${(data[i].Days!=null)?data[i].Days:(data[i].Nights!=null)?data[i].Nights:''}</span>
