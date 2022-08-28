@@ -132,7 +132,7 @@ function getCustomDateFormat(data) {
         const date = ('0' + t.getDate()).slice(-2);
         const month = monthNames[t.getMonth()];
         const year = t.getFullYear();
-        const time = `${date}/${month}/${year}`;
+        const time = `${date}-${month}-${year}`;
         return time;
     }
 
@@ -450,7 +450,7 @@ async function diplayData(dataA,stat)
         var photoAirlin=(data[i].logo!=null)?data[i].logo:'';
         if(localStorage.getItem("To")==data[i].citys) {data[i].citys="";}
         if(data[i].Dates != null){data[i].Dates=data[i].Dates.slice(0,10);}else{data[i].Dates=data[i].Datest};
-          (data[i].Arrive!=null)?(data[i].Arrive=data[i].Arrive.slice(0,10)):null;
+          (data[i].Arrive!=null)?(data[i].Arrive=getCustomDateFormat(data[i].Arrive.slice(0,10))):null;
           (data[i].Depart!=null)?(data[i].Depart=getCustomDateFormat(data[i].Depart.slice(0,10))):null;
 
           var rows=`<div class="col-lg-6 responsive-column">
