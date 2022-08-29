@@ -476,12 +476,12 @@ async function diplayData(dataA,stat)
                       </div>
                   </div><!-- end card-top-title -->
                   <div class="flight-details">
-                      <div class="flight-time">
                             <div class="card-rating">
                                 <span class="badge text-white">${(data[i].Star!=null)?data[i].Star:0}/5</span>
                                 <span class="review__text">Average</span>
                                 <span class="rating__text">(${(data[i].Review!=null)?data[i].Review:0} Reviews)</span>
                             </div>
+                      <div class="flight-time">
                           <div class="flight-time-item take-off d-flex">
                               <div class="flex-shrink-0 mr-2">
                                   <i class="la la-plane"></i>
