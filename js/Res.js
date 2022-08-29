@@ -474,7 +474,7 @@ async function diplayData(dataA,stat)
                           <h6  Style=" color: #287dfa; margin-top:10px">${(data[i].New_price!=null)?'New Price':'Total Price'}</h6>
                           <h6  Style=" color: #287dfa; margin-top:10px"><span class="cutlery"><i class="la la-cutlery"></i></span>
                           <span class="review__text" style="color:black">${(data[i].Star!=null)?data[i].Board:"No Board There"}</span>
-                          <span class="badge text-white">${(data[i].Star!=null)?data[i].Star:0}/5</span></h6>
+                          <span class="card-rating" class="badge text-white">${(data[i].Star!=null)?data[i].Star:0}/5</span></h6>
                       </div>
                       <div>
                           <div class="text-right">
