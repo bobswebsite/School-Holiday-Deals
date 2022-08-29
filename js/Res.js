@@ -462,6 +462,11 @@ async function diplayData(dataA,stat)
               <span class="badge" style="float:right;color:white;background-color: coral;">${(data[i].Days!=null)?data[i].Days:(data[i].Nights!=null)?data[i].Nights:''}</span>
               <span class="badge" style="float:left;color:white;background-color: coral;">${(data[i].Cabin!=null)?data[i].Cabin:(data[i].Guest!=null)?data[i].Guest+' Guests':''}</span>
               <div class="card-body">
+                        <div class="card-rating">
+                            <span class="badge text-white">${(data[i].Star!=null)?data[i].Star:0}/5</span>
+                            <span class="review__text">Average</span>
+                            <span class="rating__text">(${(data[i].Review!=null)?data[i].Review:0} Reviews)</span>
+                        </div>
                   <div class="card-top-title d-flex justify-content-between">
                       <div>
                           <h3 class="card-title font-size-17">${localStorage.getItem("To")}</h3>
@@ -474,11 +479,6 @@ async function diplayData(dataA,stat)
                           <div><span  Style=" color: red; font-size:16px">${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''}</span></div><div><i class="${(data[i].New_price>data[i].Olde_price)?'icono-arrow2-up':(data[i].New_price<data[i].Olde_price)?'icono-arrow2-down':'icono-arrow2-down'}" style="color:${(data[i].New_price>data[i].Olde_price)?'red':(data[i].New_price<data[i].Olde_price)?'green':'grey'}"></i><span Style=" color: #287dfa; font-size:18px">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</span></div>
                           </div>
                       </div>
-                      <div class="card-rating">
-                            <span class="badge text-white">${(data[i].Star!=null)?data[i].Star:0}/5</span>
-                            <span class="review__text">Average</span>
-                            <span class="rating__text">(${(data[i].Review!=null)?data[i].Review:0} Reviews)</span>
-                        </div>
                   </div><!-- end card-top-title -->
                   <div class="flight-details">
                       <div class="flight-time">
