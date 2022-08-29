@@ -473,14 +473,14 @@ async function diplayData(dataA,stat)
                           <h6  Style=" color: red; margin-top:10px">${(data[i].Olde_price!=null)?'Old Price':''}</h6>
                           <h6  Style=" color: #287dfa; margin-top:10px">${(data[i].New_price!=null)?'New Price':'Total Price'}</h6>
                           <h6  Style=" color: #287dfa; margin-top:10px"><span class="cutlery"><i class="la la-cutlery"></i></span>
-                          <span class="review__text" style="color:black">${(data[i].Star!=null)?data[i].Board:"No Board There"}</span>
-                          <span class="card-rating" class="badge text-white">${(data[i].Star!=null)?data[i].Star:0}/5</span></h6>
+                          <span class="review__text" style="color:black">${(data[i].Star!=null)?data[i].Board:"No Board There"}</span></h6>
                       </div>
                       <div>
                           <div class="text-right">
                           <p class="card-meta font-size-14">${(Nome=='EASYJET' || Nome=='JET2HOLIDAYS')?'Round trip flights':'Round trip'}</p>
                           <div><span  Style=" color: red; font-size:16px">${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''}</span></div><div><i class="${(data[i].New_price>data[i].Olde_price)?'icono-arrow2-up':(data[i].New_price<data[i].Olde_price)?'icono-arrow2-down':'icono-arrow2-down'}" style="color:${(data[i].New_price>data[i].Olde_price)?'red':(data[i].New_price<data[i].Olde_price)?'green':'grey'}"></i><span Style=" color: #287dfa; font-size:18px">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</span></div>
                           </div>
+                          <span class="card-rating" class="badge text-white">${(data[i].Star!=null)?data[i].Star:0}/5</span>
                       </div>
                   </div><!-- end card-top-title -->
                   <div class="flight-details">
