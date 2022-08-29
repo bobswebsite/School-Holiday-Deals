@@ -477,6 +477,11 @@ async function diplayData(dataA,stat)
                   </div><!-- end card-top-title -->
                   <div class="flight-details">
                       <div class="flight-time">
+                            <div class="card-rating">
+                                <span class="badge text-white">${(data[i].Star!=null)?data[i].Star:0}/5</span>
+                                <span class="review__text">Average</span>
+                                <span class="rating__text">(${(data[i].Review!=null)?data[i].Review:0} Reviews)</span>
+                            </div>
                           <div class="flight-time-item take-off d-flex">
                               <div class="flex-shrink-0 mr-2">
                                   <i class="la la-plane"></i>
@@ -493,11 +498,6 @@ async function diplayData(dataA,stat)
                                   <h3 class="card-title font-size-15 font-weight-medium mb-0">To</h3>
                                   <p class="card-meta font-size-14">${localStorage.getItem("To")}: ${(data[i].citys==localStorage.getItem("To"))?'':(data[i].citys!=null)?data[i].citys:(data[i].To_Airpot==localStorage.getItem("To"))?'':data[i].To_Airpot} ${data[i].To}</p>
                               </div>
-                              <div class="card-rating">
-                                <span class="badge text-white">${(data[i].Star!=null)?data[i].Star:0}/5</span>
-                                <span class="review__text">Average</span>
-                                <span class="rating__text">(${(data[i].Review!=null)?data[i].Review:0} Reviews)</span>
-                            </div>
                           </div>
                           ${(data[i].Airline!=null)?'<div class="flight-time-item take-off">'+
                         '<span class="color-text-2 mr-1">Airline: </span>'+
