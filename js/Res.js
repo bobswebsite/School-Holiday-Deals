@@ -464,7 +464,7 @@ async function diplayData(dataA,stat)
               <div class="card-body">
                              <div class="card-rating">
                                 <span class="badge text-white">${(data[i].Star!=null)?data[i].Star:0}/5</span>
-                                <span class="review__text">data[i].Badge</span>
+                                <span class="review__text">${data[i].Badge}</span>
                                 <span class="rating__text">(${(data[i].Review!=null)?data[i].Review:0} Reviews)</span>
                             </div>
                   <div class="card-top-title d-flex justify-content-between">
