@@ -463,9 +463,8 @@ async function diplayData(dataA,stat)
               <span class="badge" style="float:left;color:white;background-color: coral;">${(data[i].Cabin!=null)?data[i].Cabin:(data[i].Guest!=null)?data[i].Guest+' Guests':''}</span>
               <div class="card-body">
                             <div class="card-rating">
-                                <span class="badge text-white">${(data[i].Star!=null)?data[i].Star:0}/5</span>
                                 <span class="review__text">${(data[i].Star!=null)?data[i].Board:"No Board There"}</span>
-                                <span class="rating__text">(${(data[i].Review!=null)?data[i].Review:0} Reviews)</span>
+                                <span class="badge text-white">${(data[i].Star!=null)?data[i].Star:0}/5</span>
                             </div>
                   <div class="card-top-title d-flex justify-content-between">
                       <div>
