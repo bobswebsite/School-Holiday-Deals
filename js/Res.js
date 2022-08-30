@@ -475,14 +475,14 @@ async function diplayData(dataA,stat)
                           <p class="card-meta font-size-14">${(Nome=='EASYJET' || Nome=='JET2HOLIDAYS')?'Round trip flights':'Round trip'}</p>
                           <div><span  Style=" color: red; font-size:16px">${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''}</span></div><div><i class="${(data[i].New_price>data[i].Olde_price)?'icono-arrow2-up':(data[i].New_price<data[i].Olde_price)?'icono-arrow2-down':'icono-arrow2-down'}" style="color:${(data[i].New_price>data[i].Olde_price)?'red':(data[i].New_price<data[i].Olde_price)?'green':'grey'}"></i><span Style=" color: #287dfa; font-size:18px">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</span></div>
                           </div>
-                          <span Style=" color: gold; font-size:18px">
+                          <span Style=" color: gold; font-size:18px; float:right">
 						  <span class="score">
 						  <span class="stars-active">
 						  ${(data[i].Star == 1)?'<i class="la la-star"></i>':(data[i].Star == 2)?'<i class="la la-star"></i><i class="la la-star"></i>':(data[i].Star == 3)?'<i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i>':(data[i].Star == 4)?'<i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i>':(data[i].Star == 5)?'<i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i>':''}
 						  
 						  </span>
 						  </span>
-						  </span>
+			</span>
                       </div>
                   </div><!-- end card-top-title -->
                   <div class="flight-details">
