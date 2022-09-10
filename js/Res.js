@@ -516,7 +516,7 @@ async function diplayData(dataA,stat)
                                 <div style="clear: both;"></div>
                                 <div class="hotel-name"><span "building-o"><i class="la la-building-o"></i></span> <b>${(data[i].Place!=null)? data[i].Place :''}</b></div>
 				<br>
-                                <div class="hotel-info"><span class="bed"><i class="la la-bed"></i></span> <b>${(data[i].Hotel_info!=null)? data[i].Hotel_info :''}</b></div>
+                                <div class="hotel-info"><span class="bed"><i class="la la-bed"></i></span> <b>${(data[i].Hotel_info!=null)? data[i].Hotel_info.split(",")[0] :''}</b></div>
                         </div>`;
           l.innerHTML+=rows;
         
