@@ -453,57 +453,75 @@ async function diplayData(dataA,stat)
           (data[i].Arrive!=null)?(data[i].Arrive=getCustomDateFormat(data[i].Arrive.slice(0,10))):null;
           (data[i].Depart!=null)?(data[i].Depart=getCustomDateFormat(data[i].Depart.slice(0,10))):null;
 
-          var rows=`<div class="deal-box">
-								<div class="top-box-left">
-                            	    <img style="width:100%" src="images/EASYJET.png">
-                            	</div>                             
-                                <div class="top-box-right">
-                                       	<div class="place"><span class="map-marker"><i class="la la-map-marker"></i></span> Peshawar one two</div>  
-                                       
-                                </div>
-                            	<div class="top-box-left">
-                            	    <img style="width:100%" src="images/ss6i.png">
-                            	</div>                             
-                                <div class="top-box-right">
-                                       	<div class="board-basis"><span class="cutlery"><i class="la la-cutlery"></i></span> <b>Self-Catering</b></div>  
-										
-                                    	<div style="clear: both;"></div>
-                                        <div class="price-text">
-                                            <b><span class="price">&pound;5780</span></b>
-                                        </div>
-                                         <div class="stars">
-										    <span class="score">											 
-											<span class="stars-active">
-												    <i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i>
-											</span>
-											</span>
-										</div>
-                                </div>
-                              
-								<div class="depart-date"><span class="calendar"><i class="la la-calendar"></i></span> <b>26-July-2022</b></div>  
-                                            
-								<div class="days" style="font-size:14px"><span class="clock-o"><i class="la la-clock-o"></i></span><b> 7 nights</b></div>
-										
-								<div class="price-box">
-									<div class="guest">
-									<span class="badge" style="float:left;color:white;background-color: coral;">4 guests</span>
-									</div>
-									<div class="blue-button">
-										<input type="button" class="btn btn-primary" value="Details" onclick="window.open('<?php echo $row['URL'];?>','_blank')" />
-									</div>
-                                </div>
-								<div style="clear: both;"></div>
-								<div class="depart-from">
-                                    <i><b>Tokyo</b></i>
-                                </div>
-								<div class="plane-logo"><span class="plane"><i class="la la-plane"></i></span></div>
-								<div class="arrive-to" style="">
-                                  <i><b>Los Angeles</b></i>
-                                </div>
-                                <div style="clear: both;"></div>
-                                <div class="hotel-name"><span "building-o"><i class="la la-building-o"></i></span> <b>Parque Las Americas</b></div>
-                                <div class="hotel-info"><span class="bed"><i class="la la-bed"></i></span> <b>1x One bedroom appartment only</b></div>
-                        </div>`;
+          var rows=`<div class="col-lg-6 responsive-column">
+          <div class="card-item flight-card flight--card">${(data[i].Image==null)?'<span class="badge" style="display: block;font-size: 14px; margin-bottom: 10px; background-color:#40cc6f;color:#fff;">'+Nome+'</span>':''}
+          ${(data[i].Image!=null)?'<div class="card-img" style="padding: 4px 4px;">'+
+                  '<img src="'+data[i].Image+'" alt="flight-img" style="max-width: 100%;max-height: 100%;"><span class="badge">'+Nome+'</span></div>':''}
+                  
+              
+              <span class="badge" style="float:right;color:white;background-color: coral;">${(data[i].Days!=null)?data[i].Days:(data[i].Nights!=null)?data[i].Nights:''}</span>
+              <span class="badge" style="float:left;color:white;background-color: coral;">${(data[i].Cabin!=null)?data[i].Cabin:(data[i].Guest!=null)?data[i].Guest+' Guests':''}</span>
+             <div class="card-body">
+                  <div class="card-top-title d-flex justify-content-between">
+                      <div>
+                          <h3 class="card-title font-size-17">${localStorage.getItem("To")}</h3>
+                          <h6  Style=" color: red; margin-top:10px">${(data[i].Olde_price!=null)?'Old Price':''}</h6>
+                          <h6  Style=" color: #287dfa; margin-top:10px">${(data[i].New_price!=null)?'New Price':'Total Price'}</h6>
+                          <h6  Style=" color: #287dfa; margin-top:10px"><span class="cutlery"><i class="la la-cutlery"></i></span>
+                          <span class="review__text" style="color:black">${(data[i].Board!=null)?data[i].Board:"No Board There"}</span></h6>
+                      </div>
+                      <div>
+                          <div class="text-right">
+                          <p class="card-meta font-size-14">${(Nome=='EASYJET' || Nome=='JET2HOLIDAYS')?'Round trip flights':'Round trip'}</p>
+                          <div><span  Style=" color: red; font-size:16px">${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''}</span></div><div><i class="${(data[i].New_price>data[i].Olde_price)?'icono-arrow2-up':(data[i].New_price<data[i].Olde_price)?'icono-arrow2-down':'icono-arrow2-down'}" style="color:${(data[i].New_price>data[i].Olde_price)?'red':(data[i].New_price<data[i].Olde_price)?'green':'grey'}"></i><span Style=" color: #287dfa; font-size:18px">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</span></div>
+                          </div>
+                          <span Style=" color: gold; font-size:18px; float:right">
+						  <span class="score">
+						  <span class="stars-active">
+						  ${(data[i].Star == 1)?'<i class="la la-star"></i>':(data[i].Star == 2)?'<i class="la la-star"></i><i class="la la-star"></i>':(data[i].Star == 3)?'<i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i>':(data[i].Star == 4)?'<i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i>':(data[i].Star == 5)?'<i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i><i class="la la-star"></i>':''}
+						  
+						  </span>
+						  </span>
+			</span>
+                      </div>
+                  </div><!-- end card-top-title -->
+                  <div class="flight-details">
+                      <div class="flight-time">
+                          <div class="flight-time-item take-off d-flex">
+                              <div class="flex-shrink-0 mr-2">
+                                  <i class="la la-plane"></i>
+                              </div>
+                              <div>
+                                  <h3 class="card-title font-size-15 font-weight-medium mb-0">From</h3>
+                                  <p class="card-meta font-size-14">${localStorage.getItem("From")}: ${data[i].From}</p>
+                              </div>
+                             
+                              <div class="flex-shrink-0 mr-2" style="float: right;">
+                                  <i class="la la-plane"></i>
+                              </div>
+                              <div style="float: right;">
+                                  <h3 class="card-title font-size-15 font-weight-medium mb-0">To</h3>
+                                  <p class="card-meta font-size-14">${localStorage.getItem("To")}: ${(data[i].citys==localStorage.getItem("To"))?'':(data[i].citys!=null)?data[i].citys:(data[i].To_Airpot==localStorage.getItem("To"))?'':data[i].To_Airpot} ${data[i].To}</p>
+                              </div>
+                          </div>
+                          ${(data[i].Airline!=null)?'<div class="flight-time-item take-off">'+
+                        '<span class="color-text-2 mr-1">Airline: </span>'+
+                          '<img src="'+photoAirlin+'" alt="flight-img"> </div>'
+                          :(Nome=='EASYJET')?'<div class="flight-time-item take-off">'+
+                          '<span class="color-text-2 mr-1">Airline: </span>'+
+                            '<img src="/images/EASYJET.png" alt="flight-img"> </div>':
+                            (Nome=='JET2HOLIDAYS')?'<div class="flight-time-item take-off">'+
+                            '<span class="color-text-2 mr-1">Airline: </span>'+
+                              '<img src="/images/JET2HOLIDAYS.png" alt="flight-img"> </div>':''}
+                      </div><!-- end flight-time -->
+                      <p class="font-size-14 text-center"><span class="color-text-2 mr-1">${(data[i].Dates!=null)?'Depart Date:':(data[i].Datest!=null)?'Date:':''} </span>${(data[i].Dates!=null)?data[i].Dates:(data[i].Datest!=null)?data[i].Datest:('Depart: '+data[i].Arrive+' Arrive: '+data[i].Depart)}</p>
+                  </div><!-- end flight-details -->
+                  <div class="btn-box text-center">
+                  <input type="button" class="theme-btn theme-btn-small w-100 btn2" onclick='savedata(${i})' value="View Details">
+                  </div>
+              </div><!-- end card-body -->
+          </div><!-- end card-item -->
+                    </div>`;
           l.innerHTML+=rows;
         
           localStorage.removeItem("baba")
