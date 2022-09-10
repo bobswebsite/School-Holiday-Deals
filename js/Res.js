@@ -491,7 +491,7 @@ async function diplayData(dataA,stat)
 										</div>
                                 </div>
                               
-								<div class="depart-date"><span class="calendar"><i class="la la-calendar"></i></span> <b>${(data[i].Dates!=null)?'Depart Date:':(data[i].Datest!=null)?'Date:':''}>/b> <b>${(data[i].Dates!=null)?data[i].Dates:(data[i].Datest!=null)?data[i].Datest:(data[i].Arrive)}</b></div>  
+								<div class="depart-date"><span class="calendar"><i class="la la-calendar"></i></span> <b>${(data[i].Dates!=null)?'Depart Date:':(data[i].Datest!=null)?'Date:':''}</b> <b>${(data[i].Dates!=null)?data[i].Dates:(data[i].Datest!=null)?data[i].Datest:(data[i].Arrive)}</b></div>  
                                             
 								<div class="days" style="font-size:14px"><span class="clock-o"><i class="la la-clock-o"></i></span><b> ${(data[i].Days!=null)?data[i].Days:(data[i].Nights!=null)?data[i].Nights:''}</b></div>
 										
