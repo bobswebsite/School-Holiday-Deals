@@ -502,7 +502,7 @@ async function diplayData(dataA,stat)
 									<span class="badge" style="float:left;color:white;background-color: coral;">${(data[i].Cabin!=null)?data[i].Cabin:(data[i].Guest!=null)?data[i].Guest+' Guests':''}</span>
 									</div>
 									<div class="blue-button">
-										<input type="button" class="btn btn-primary" value="Details" onclick="window.open('<?php echo $row['URL'];?>','_blank')" />
+										<input type="button" class="btn btn-primary" value="Details" onclick="savedata(${i})" />
 									</div>
                                 </div>
 								<div style="clear: both;"></div>
@@ -514,8 +514,8 @@ async function diplayData(dataA,stat)
                                   <i><b>${localStorage.getItem("To")}: ${(data[i].citys==localStorage.getItem("To"))?'':(data[i].citys!=null)?data[i].citys:(data[i].To_Airpot==localStorage.getItem("To"))?'':data[i].To_Airpot} ${data[i].To}</b></i>
                                 </div>
                                 <div style="clear: both;"></div>
-                                <div class="hotel-name"><span "building-o"><i class="la la-building-o"></i></span> <b>Parque Las Americas</b></div>
-                                <div class="hotel-info"><span class="bed"><i class="la la-bed"></i></span> <b>1x One bedroom appartment only</b></div>
+                                <div class="hotel-name"><span "building-o"><i class="la la-building-o"></i></span> <b>${(data[i].Place!=null)? data[i].Place :''}</b></div>
+                                <div class="hotel-info"><span class="bed"><i class="la la-bed"></i></span> <b>${(data[i].Hotel_info!=null)? data[i].Hotel_info :''}</b></div>
                         </div>`;
           l.innerHTML+=rows;
         
