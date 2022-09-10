@@ -480,7 +480,7 @@ async function diplayData(dataA,stat)
 										
                                     	<div style="clear: both;"></div>
                                         <div class="price-text">
-                                            <b><span class="price">&pound;5780</span></b>
+                                            <b><span class="price"><span  Style=" color: red; font-size:16px">${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''}</span></div><div><i class="${(data[i].New_price>data[i].Olde_price)?'icono-arrow2-up':(data[i].New_price<data[i].Olde_price)?'icono-arrow2-down':'icono-arrow2-down'}" style="color:${(data[i].New_price>data[i].Olde_price)?'red':(data[i].New_price<data[i].Olde_price)?'green':'grey'}"></i><span Style=" color: #287dfa; font-size:18px">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</span></span></b>
                                         </div>
                                          <div class="stars">
 										    <span class="score">											 
