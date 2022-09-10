@@ -478,7 +478,7 @@ async function diplayData(dataA,stat)
                                 <div class="top-box-right">
                                        	<div class="board-basis"><span class="cutlery"><i class="la la-cutlery"></i></span> <b>${(data[i].Board!=null)?data[i].Board:"No Board There"}</b></div>  
 					<div class="price-text">
-                                            <b><span class="price"><span  Style=" color: red; font-size:14px"><del>${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''}</del><div></span></b>
+                                            <b><span class="price"><span  Style=" color: red; font-size:14px"><del>${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''}</del></span></b>
                                         </div>				
                                     	<div style="clear: both;"></div>
                                         <div class="price-text">
