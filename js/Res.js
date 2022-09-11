@@ -449,19 +449,68 @@ async function diplayData(dataA,stat)
         var Nome=(data[i].Name=="comprGOOGL")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLAirline")?"GOOGLE FLIGHT AIRLINE":(data[i].Name=="comprGOOGLBusiness")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLPremium")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLCOPY")?"GOOGLE FLIGHT DOMESTIC":(data[i].Name=="comprsky")?"Skyscanner":(data[i].Name=="quicksky")?"Skyscanner":(data[i].Name=="easyjet")?"EASYJET":(data[i].Name=="JET2HOLIDAYS")?"JET2HOLIDAYS":(data[i].Name=="t")?"AIRFACE":"HOLIDAY"
         var photoAirlin=(data[i].logo!=null)?data[i].logo:'';
         if(localStorage.getItem("To")==data[i].citys) {data[i].citys="";}
-        if(data[i].Dates != null){data[i].Dates=data[i].Dates.slice(0,10);}else{data[i].Dates=data[i].Datest};
+        if(data[i].Dates != null){data[i].Dates=getCustomDateFormat(data[i].Dates.slice(0,10));}else{data[i].Dates=getCustomDateFormat(data[i].Datest)};
           (data[i].Arrive!=null)?(data[i].Arrive=getCustomDateFormat(data[i].Arrive.slice(0,10))):null;
           (data[i].Depart!=null)?(data[i].Depart=getCustomDateFormat(data[i].Depart.slice(0,10))):null;
 		  
 		  
 		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
+		  if(data[i].Dates == null){
+		  var rows=`<div class="deal-box-flight">
+                            
+							
+										
+									<div class="depart-from-box-flight">
+									
+                                        <div class="depart-from-flight">
+                                           <b>${localStorage.getItem("From")}: ${data[i].From}</b>
+                                        </div>
+										<div class="plane-logo-flight"><i class="la la-plane"></i></div>
+										                                      <div class="arrive-to-flight">
+                                           <b>${localStorage.getItem("To")}: ${(data[i].citys==localStorage.getItem("To"))?'':(data[i].citys!=null)?data[i].citys:(data[i].To_Airpot==localStorage.getItem("To"))?'':data[i].To_Airpot} ${data[i].To}</b>
+                                        </div>
+										                                                                  
+                                    </div>                          
+                                   
+                                <div style="clear: both;"></div>
+                                <div class="depart-date-flight">
+                                                <i class="la la-calendar"></i> <b>${(data[i].Dates!=null)?'Depart Date:':(data[i].Datest!=null)?'Date:':''}</b> <b>${(data[i].Dates!=null)?data[i].Dates:(data[i].Datest!=null)?data[i].Datest:(data[i].Arrive)}</b>
+                                                </div>    
+											<div class="side-border-flight"></div>
+											<div class="depart-date-flight">
+                                           <b><i class="la la-clock-o"></i> ${(data[i].Days!=null)?data[i].Days:(data[i].Nights!=null)?data[i].Nights:''}</b>
+                                        </div> 
+										<div class="price-text-flight">
+                                            <b><span class="price-flight"><span  Style=" color: red; font-size:14px"><del>${(data[i].Olde_price!=null)?'£'+data[i].Olde_price+'.00':''}</del></span></b>
+                                            
+                                        </div>
+										
+										<div style="clear: both;"></div>
+                                <div class="airline-logo-flight" style="position:absolute;left:0px;">${(data[i].Airline!=null)?'<img src="'+photoAirlin+'">'
+								:(Nome=='EASYJET')?'<img src="images/EASYJET.png">':
+								(Nome=='JET2HOLIDAYS')?'<img src="/images/JET2HOLIDAYS.png">':''}</div>
+										
+									 								
+                                	
+                                    
+                                        <div class="blue-button-flight" style="position:absolute; right: 40%">
+                                             <input type="button" class="btn btn-primary" value="Details" onclick="savedata(${i})" />
+                                        </div>
+                                        
+									<div class="price-text-flight">
+                                            <b><span class="price-flight"><i class="${(data[i].New_price>data[i].Olde_price)?'icono-arrow2-up':(data[i].New_price<data[i].Olde_price)?'icono-arrow2-down':'icono-arrow2-down'}" style="color:${(data[i].New_price>data[i].Olde_price)?'red':(data[i].New_price<data[i].Olde_price)?'green':'grey'}"></i><span Style=" color: #287dfa; font-size:16px">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</span></span></b>
+                                            
+                                        </div>
+											<div style="clear: both;"></div>
+							
+                                   
+                                
+                                
+                            
+                        </div>`;
+          l.innerHTML+=rows;
+		  }
+		  else{
           var rows=`<div class="deal-box">
 								<div class="top-box-left">
 								${(data[i].Airline!=null)?'<img style="width:100%" src="'+photoAirlin+'">'
@@ -519,7 +568,7 @@ async function diplayData(dataA,stat)
                                 <div class="hotel-info"><span class="bed"><i class="la la-bed"></i></span> <b>${(data[i].Hotel_info!=null)? data[i].Hotel_info.split(",")[0] :''}</b></div>
                         </div>`;
           l.innerHTML+=rows;
-        
+		  }
           localStorage.removeItem("baba")
       }  
       document.getElementById("Showing_Flights").innerHTML=`Showing ${nbrPage} of ${tpage} Flights`  
