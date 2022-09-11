@@ -494,7 +494,7 @@ async function diplayData(dataA,stat)
                                 	
                                     
                                         <div class="blue-button-flight" style="position:absolute; right: 40%">
-                                             <input style="height:10px;" type="button" class="btn-primary-flight" value="Details" onclick="savedata(${i})" />
+                                             <input style="height:25px; font-size:15px;" type="button" class="btn-primary-flight" value="Details" onclick="savedata(${i})" />
                                         </div>
                                         
 									<div class="price-text-flight">
