@@ -39,9 +39,7 @@ async function home(){
     if(localStorage.getItem("admin")==null)localStorage.setItem("admin",false);
     var dash=document.getElementsByClassName("dashboard1");
     dash[0].style.display='none';
-    dash[1].style.display='none';
     if(localStorage.getItem("admin")=="false"){dash[0].style.display='inline-block';}
-    else if(localStorage.getItem("admin")=="true"){dash[1].style.display='inline-block';}
     (divase!='mobile')?await NUMVisitors({Status:false}):await NUMVisitors({Status:true});
      
     

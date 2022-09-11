@@ -27,6 +27,400 @@
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/flag-icon.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body{
+            overflow-x: hidden;
+            text-align:left;
+        }
+        .container {
+           	padding-bottom:20px;
+        }
+		.deal-box {
+        	border:1px solid #e77d16;
+            border-radius: 4px;
+        	width:48%;
+        	margin:4px 4px;
+        	float:left;
+			position:relative;
+			padding:6px;
+			height:283px;
+        }
+        .top-box-left{
+            width:35%;
+            float:left;
+        }
+        .top-box-right{
+            width:65%;
+            float:right;
+        }
+        .stars {
+		    float:left;
+		    padding-left:10px;
+		 }
+        .score {
+		  display: block;
+		  font-size: 12px;
+		  position: relative;
+		  overflow: hidden;
+		  width: 67px;
+		}
+
+		.score .stars-active {
+		  color: #EEBD01;
+		  display: inline-block;
+		  
+        }
+        .image-box {
+            float:left;
+            width:175px;
+        }
+        
+        .map-marker {
+            color:#d2cbc4;
+            font-size:21px;
+        }
+        .cutlery {
+            color:#75d0e0;
+            font-size:21px;
+        }
+        .calendar {
+            color:#fbb9b9;
+            font-size:21px;
+        }
+        .clock-o {
+            color:#fbb9b9;
+            font-size:21px;
+        }
+        .plane {
+            color:#d2cbc4;
+            font-size:21px;
+        }
+        .building-o {
+            color:#7a6082;
+            font-size:21px;
+        }
+        .bed {
+            color:#7a6082;
+            font-size:21px;
+        }
+        .board-basis {
+            float:left;
+            border:1px solid #d2cbc4;
+            padding-right:10px;
+            font-size:14px;
+			margin-left:7px
+        }
+        .hotel-name  {
+            font-size:14px;
+            float:left;
+            padding-right:14px;
+        }
+        .hotel-info {
+            font-size:12px;
+            float:left;
+            padding-right:14px;
+        }
+        .depart-date {
+        	float: left;        				
+			padding-right:14px;
+        }
+		
+       .depart-from {
+			float:left;			
+			text-align:left;
+			font-size:13px;
+			padding-right:8px;
+			padding-top:5px;
+		}
+		.place {
+			float:left;			
+			text-align:left;
+			font-size:14px;
+			padding-right:8px;
+		}	
+        .plane-logo {
+            float: left;        	
+        	text-align: left;
+        	font-size:13px;
+        	padding-top:5px; 
+        }
+        .price{
+        	font-size:20px;
+        	font-family: open sans, helvetica neue, helvetica, arial, sans-serif;
+			float: right;
+			
+        }
+		.price-text {
+				margin-right:20px
+		}		
+        .arrive-to {
+        	float: left;        	
+        	text-align: left;
+        	font-size:13px;
+        	padding-left:8px;
+        	padding-top:5px;
+        }
+        .airline-logo{
+    		float:left;
+    		padding-right:14px;
+    		width:75px;
+    		padding-top:5px;
+		}
+		
+		.side-border {
+			border-left: 2px solid gray;
+			height:28px;
+			float:left;
+			padding-left:14px;
+			
+		}
+        .days {
+			float:left;
+			padding-right:14px;
+			
+		}		
+        .deal-content {	
+        	width: 100%;
+        	font-size:13px;
+        	padding-left:0px;
+        	padding-top:7px;
+        }
+		.blue-button {
+			float: left;
+			text-align: left;
+			position: absolute;
+			right: 5px;
+			bottom: 4px
+		}
+		.guest {
+			float: left;
+			text-align: left;
+			position: absolute;
+			left: 5px;
+			bottom: 10px
+		}
+		.btn-primary {
+    		color: #fff;
+    		background-color: #3162ac;
+    		border-color: #3162ac;	
+		}	
+		.btn {
+			padding:3px 4px;
+			font-size:14px;
+		}
+		
+		@media only screen and (max-width: 1200px) {
+		 .top-box-right {
+            width: 58%;
+		 } 
+		 .depart-date {
+		     padding-left:30px;
+		 }
+		}    
+        @media only screen and (max-width: 1000px) {
+        
+        .board-basis {
+            font-size:13px; 
+            padding-right:5px;
+        }
+        .stars {
+            padding-left:3px;
+        }
+        .place {
+            font-size:13px;
+        }
+         .hotel-name  {
+            font-size:12px;
+        }
+        .hotel-info {
+            font-size:12px;
+        }
+        .image-box {
+            width:129px;
+        }    
+        .map-marker {
+            font-size:15px;
+        }
+        .cutlery {
+            font-size:15px;
+        }
+        .calendar {
+            font-size:15px;
+        }
+        .clock-o {
+            font-size:15px;
+        }
+        .plane {
+            font-size:15px;
+        }
+        .building-o {
+            font-size:15px;
+        }
+        .bed {
+            font-size:15px;
+        }    
+        .top-box-left{
+            width:35%;
+        }
+        .top-box-right{
+            width:62%;
+        }
+         .blue-button {
+            right: 6px;
+            bottom: 5px;
+        }
+        .score {
+		  font-size: 11px;
+		  width: 54px;
+		}
+		.top-box-left{
+            width:35%;
+        }
+        .top-box-right{
+            width:60%;
+        }
+        .depart-date {
+          padding-left: 17px;
+         }
+         .deal-box {
+            height:283px;
+        }
+        .arrive-to {
+        	padding-top:0px;
+        }
+        .airline-logo{
+    		padding-top:0px;
+		}
+		.plane-logo {
+		    padding-top:0px;
+		}
+		.depart-from {
+		    padding-top:0px;
+		}
+		@media only screen and (max-width: 750px) {
+        .deal-box {
+            width:100%;
+        }
+        .hotel-info {
+            font-size:12px;
+           
+        }
+		 }
+		 @media only screen and (max-width: 425px) {
+        .price {
+            font-size:20px;
+        }
+        .price-text{
+            right:13px;
+        }
+        .board-basis {
+            font-size:12px; 
+        }
+         .hotel-name  {
+            font-size:12px;
+            float:none;
+        }
+        .hotel-info {
+            font-size:12px;
+        }
+        .place {
+            font-size:12px;
+        }
+        .image-box {
+            width:129px;
+        }    
+        .map-marker {
+            font-size:15px;
+        }
+        .cutlery {
+            font-size:15px;
+        }
+        .calendar {
+            font-size:15px;
+        }
+        .clock-o {
+            font-size:15px;
+        }
+        .plane {
+            font-size:15px;
+        }
+        .building-o {
+            font-size:15px;
+        }
+        .bed {
+            font-size:15px;
+        }   
+        
+         .blue-button {
+            right: 6px;
+            bottom: 5px;
+        }
+		} 
+	    
+       @media only screen and (max-width: 320px) {
+        
+        .board-basis {
+            font-size:11px; 
+        }
+         .hotel-name  {
+            font-size:11px;
+        }
+        .hotel-info {
+            font-size:11px;
+        }
+        .place {
+            font-size:11px;
+        }
+        .image-box {
+            width:122px;
+        }    
+        .map-marker {
+            font-size:14px;
+        }
+        .cutlery {
+            font-size:14px;
+        }
+        .calendar {
+            font-size:14px;
+        }
+        .clock-o {
+            font-size:14px;
+        }
+        .plane {
+            font-size:14px;
+        }
+        .building-o {
+            font-size:14px;
+        }
+        .bed {
+            font-size:14px;
+        }    
+        .top-box-left{
+            width:35%;
+        }
+        .top-box-right{
+            width:56%;
+        }
+        .depart-date {
+          padding-left: 10px;
+         }
+         .blue-button {
+            right: 6px;
+            bottom: 5px;
+        }
+        .score {
+		  font-size: 11px;
+		  width: 62px;
+		}
+		.price-text {
+			right: -8px;
+		}
+		.airline-logo {
+		    float:none;
+		}
+		}	
+    </style>
+    <link rel="stylesheet" href="css/flight.css">
 </head>
 <body id="Load" >
 <!-- start cssload-loader -->
