@@ -477,11 +477,7 @@ async function diplayData(dataA,stat)
                                 <div class="depart-date-flight">
                                                 <i class="la la-calendar"></i> <b>${(data[i].Dates!=null)?'':(data[i].Datest!=null)?'Date:':''}</b> <b>${(data[i].Dates!=null)?data[i].Dates:(data[i].Datest!=null)?data[i].Datest:(data[i].Arrive)}</b>
                                                 </div>    
-<<<<<<< HEAD
 											
-=======
-											<div class="side-border-flight"></div>
->>>>>>> 9f5f75dc3e19f201ea4afc8afd19b5be48300360
 											<div class="depart-date-flight">
                                            <b><i class="la la-clock-o"></i> ${(data[i].Days!=null)?data[i].Days:(data[i].Nights!=null)?data[i].Nights:''}</b>
                                         </div> 
