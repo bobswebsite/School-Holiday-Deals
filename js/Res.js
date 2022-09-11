@@ -474,7 +474,7 @@ async function diplayData(dataA,stat)
                                    
                                 <div style="clear: both;"></div>
                                 <div class="depart-date-flight">
-                                                <i class="la la-calendar"></i> <b>${(data[i].Dates!=null)?'Depart Date:':(data[i].Datest!=null)?'Date:':''}</b> <b>${(data[i].Dates!=null)?data[i].Dates:(data[i].Datest!=null)?data[i].Datest:(data[i].Arrive)}</b>
+                                                <i class="la la-calendar"></i> <b>${(data[i].Dates!=null)?'':(data[i].Datest!=null)?'Date:':''}</b> <b>${(data[i].Dates!=null)?data[i].Dates:(data[i].Datest!=null)?data[i].Datest:(data[i].Arrive)}</b>
                                                 </div>    
 											<div class="side-border-flight"></div>
 											<div class="depart-date-flight">
@@ -494,7 +494,7 @@ async function diplayData(dataA,stat)
                                 	
                                     
                                         <div class="blue-button-flight" style="position:absolute; right: 40%">
-                                             <input type="button" class="btn btn-primary" value="Details" onclick="savedata(${i})" />
+                                             <input type="button" class="btn btn-primary btn-sm" value="Details" onclick="savedata(${i})" />
                                         </div>
                                         
 									<div class="price-text-flight">
