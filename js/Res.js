@@ -448,14 +448,15 @@ async function diplayData(dataA,stat)
       
         var Nome=(data[i].Name=="comprGOOGL")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLAirline")?"GOOGLE FLIGHT AIRLINE":(data[i].Name=="comprGOOGLBusiness")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLPremium")?"GOOGLE FLIGHT":(data[i].Name=="comprGOOGLCOPY")?"GOOGLE FLIGHT DOMESTIC":(data[i].Name=="comprsky")?"Skyscanner":(data[i].Name=="quicksky")?"Skyscanner":(data[i].Name=="easyjet")?"EASYJET":(data[i].Name=="JET2HOLIDAYS")?"JET2HOLIDAYS":(data[i].Name=="t")?"AIRFACE":"HOLIDAY"
         var photoAirlin=(data[i].logo!=null)?data[i].logo:'';
+	int test = 0;
         if(localStorage.getItem("To")==data[i].citys) {data[i].citys="";}
-        if(data[i].Dates != null){data[i].Dates=getCustomDateFormat(data[i].Dates.slice(0,10));}else{data[i].Dates=getCustomDateFormat(data[i].Datest)};
+        if(data[i].Dates != null){data[i].Dates=getCustomDateFormat(data[i].Dates.slice(0,10));}else{data[i].Dates=data[i].Datest; test = 1;};
           (data[i].Arrive!=null)?(data[i].Arrive=getCustomDateFormat(data[i].Arrive.slice(0,10))):null;
           (data[i].Depart!=null)?(data[i].Depart=getCustomDateFormat(data[i].Depart.slice(0,10))):null;
 		  
 		  
 		  
-		  if(data[i].Dates != null){
+		  if(test == 0){
 		  var rows=`<div class="deal-box-flight">
                             
 							
