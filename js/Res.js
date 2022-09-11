@@ -487,15 +487,15 @@ async function diplayData(dataA,stat)
                                         </div>
 										
 										<div style="clear: both;"></div>
-                                <div class="airline-logo-flight">${(data[i].Airline!=null)?'<img src="'+photoAirlin+'" width="100%">'
+                                <div class="airline-logo-flight">${(data[i].Airline!=null)?'<img src="'+photoAirlin+'" style="width:100%">'
 								:(Nome=='EASYJET')?'<img src="images/EASYJET.png">':
 								(Nome=='JET2HOLIDAYS')?'<img src="/images/JET2HOLIDAYS.png">':''}</div>
 										
 									 								
                                 	
                                     
-                                        <div class="blue-button-flight" style="position:absolute; right: 40%">
-                                             <input type="button" class="btn-primary-flight" value="Details" onclick="savedata(${i})" />
+                                        <div class="blue-button-flight">
+                                             <input type="button" class="btn btn-primary-flight" value="Details" onclick="savedata(${i})" />
                                         </div>
                                         
 									<div class="price-text-flight">

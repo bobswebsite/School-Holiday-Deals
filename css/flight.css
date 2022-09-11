@@ -75,10 +75,8 @@ body{
         	padding-top:7px;
         }
 		.blue-button-flight {
-			float: left;
-			text-align: left;
 			position: absolute;
-			right: 18px;
+			right: 156px;
 			bottom: 1px
 		}
 		.btn-primary-flight {
