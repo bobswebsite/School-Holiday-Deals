@@ -487,7 +487,7 @@ async function diplayData(dataA,stat)
                                         </div>
 										
 										<div style="clear: both;"></div>
-                                <div class="airline-logo-flight" style="position:absolute;left:0px;">${(data[i].Airline!=null)?'<img src="'+photoAirlin+'">'
+                                <div class="airline-logo-flight">${(data[i].Airline!=null)?'<img src="'+photoAirlin+'" width="100%">'
 								:(Nome=='EASYJET')?'<img src="images/EASYJET.png">':
 								(Nome=='JET2HOLIDAYS')?'<img src="/images/JET2HOLIDAYS.png">':''}</div>
 										

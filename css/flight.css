@@ -58,7 +58,7 @@ body{
         	text-align: left;
         }
         .airline-logo-flight{
-			position:absolute;width: 107px;left: 295px;bottom:6px;
+			position:absolute;width: 107px;left: 0px;bottom:6px;
 		}
 		.plane-logo-flight {
 			margin-left:14px;width:24px;float:left;margin-right:1px
