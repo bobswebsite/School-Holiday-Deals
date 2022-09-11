@@ -494,11 +494,11 @@ async function diplayData(dataA,stat)
                                 	
                                     
                                         <div class="blue-button-flight" style="position:absolute; right: 40%">
-                                             <input type="button" class="btn btn-primary-flight" value="Details" onclick="savedata(${i})" />
+                                             <input type="button" class="btn-flight btn-primary-flight" value="Details" onclick="savedata(${i})" />
                                         </div>
                                         
 									<div class="price-text-flight">
-                                            <b><span class="price-flight; position:absolute; right:20px;"><i class="${(data[i].New_price>data[i].Olde_price)?'icono-arrow2-up':(data[i].New_price<data[i].Olde_price)?'icono-arrow2-down':'icono-arrow2-down'}" style="color:${(data[i].New_price>data[i].Olde_price)?'red':(data[i].New_price<data[i].Olde_price)?'green':'grey'}"></i><span Style=" color: #287dfa; font-size:16px; position:absolute; right:20px;">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</span></span></b>
+                                            <b><span class="price-flight; position:absolute; right:20px;"><i class="${(data[i].New_price>data[i].Olde_price)?'icono-arrow2-up':(data[i].New_price<data[i].Olde_price)?'icono-arrow2-down':'icono-arrow2-down'}" style="color:${(data[i].New_price>data[i].Olde_price)?'red':(data[i].New_price<data[i].Olde_price)?'green':'grey'}"></i><span Style=" color: #287dfa; font-size:16px;">£${(data[i].New_price!=null)?data[i].New_price:(data[i].Total_Price!=null)?data[i].Total_Price:data[i].Total}.00</span></span></b>
                                             
                                         </div>
 											<div style="clear: both;"></div>
