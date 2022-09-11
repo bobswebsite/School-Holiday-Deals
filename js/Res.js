@@ -455,7 +455,7 @@ async function diplayData(dataA,stat)
 		  
 		  
 		  
-		  if(data[i].Dates == null){
+		  if(data[i].Dates != null){
 		  var rows=`<div class="deal-box-flight">
                             
 							
